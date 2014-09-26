@@ -1,0 +1,220 @@
+@import "settings";
+@import "foundation";
+@import "colors";
+// Or selectively include components
+// @import
+//   "foundation/components/accordion",
+//   "foundation/components/alert-boxes",
+//   "foundation/components/block-grid",
+//   "foundation/components/breadcrumbs",
+//   "foundation/components/button-groups",
+//   "foundation/components/buttons",
+//   "foundation/components/clearing",
+//   "foundation/components/dropdown",
+//   "foundation/components/dropdown-buttons",
+//   "foundation/components/flex-video",
+//   "foundation/components/forms",
+//   "foundation/components/grid",
+//   "foundation/components/inline-lists",
+//   "foundation/components/joyride",
+//   "foundation/components/keystrokes",
+//   "foundation/components/labels",
+//   "foundation/components/magellan",
+//   "foundation/components/orbit",
+//   "foundation/components/pagination",
+//   "foundation/components/panels",
+//   "foundation/components/pricing-tables",
+//   "foundation/components/progress-bars",
+//   "foundation/components/reveal",
+//   "foundation/components/side-nav",
+//   "foundation/components/split-buttons",
+//   "foundation/components/sub-nav",
+//   "foundation/components/switches",
+//   "foundation/components/tables",
+//   "foundation/components/tabs",
+//   "foundation/components/thumbs",
+//   "foundation/components/tooltips",
+//   "foundation/components/top-bar",
+//   "foundation/components/type",
+//   "foundation/components/offcanvas",
+//   "foundation/components/visibility";
+
+
+* {
+	// background: #ccc;
+	// border: 1px solid #333;
+}
+.outerMain{
+	background-image: url(../img/bg1.png);
+	background-repeat: repeat-x;
+}
+
+.outer{
+	background-image:url(../img/pattern.png);
+	background-repeat: repeat-x;
+	-webkit-background-size: 30%;
+	background-size: 45%;
+	background-position: bottom;
+}
+.header{
+	background-color:transparent!important;
+	background-image: url(../img/creep.png)!important;
+	background-size:35%;
+	background-repeat: no-repeat;
+	padding: 3em .5em;
+	background-position: right;
+
+	h1{
+		font-family: Nosifer;
+		font-size: rem-calc(50);
+	}
+}
+.row{
+	background-color:$white;
+}
+.columns{
+	padding-left:.5%;
+	padding-right:.5%;
+}
+// SIDEBAR
+.sidebar{
+	padding:0;
+	border:1px solid $lightgray;
+
+	.boxes{
+		p{
+			display: box;
+			width: 100%;
+			background: $black;
+			color: $pinkish;
+			font-weight: bold;
+			text-align:center;
+			margin-bottom: 5px;
+			padding: 3px 0;
+			font-size: rem-calc(12);
+		}
+
+		ul{
+			margin: 0;
+			li{
+				list-style: none;
+
+				a{
+					width:100%;
+					display:block;
+					font-size: rem-calc(11);
+					padding: 0 5px;
+					border-bottom:1px dashed #ddd;
+					color:$black;
+
+					&:hover{
+						background:$lightgray;
+					}
+				}
+			}
+		}
+	}
+}
+.main{
+	padding-top: 1em;
+	padding-bottom: 1em;	
+}
+.productPart{
+	.productbox{
+		border:1px solid #ddd;
+		padding: 1em;
+		img{
+			margin:0 auto;
+			display: block;
+			width:145px;
+		}
+
+		ul{
+			margin:0;
+			li{
+				list-style:none;
+				display: block;
+			}
+		}
+
+		.button{
+			display: block;
+			width:100%;
+		}
+	}
+}
+.prodName{
+	margin-bottom:20px;
+	margin-top: 10px;
+	line-height: 15px;
+	height:25px;
+	a{
+		font-size: 13px;
+		font-weight: bold;
+	}
+}
+.moreinfo{
+	font-size:12px;
+	margin:.5em 0;
+}
+.price{
+	color: #EF9303;
+	font-weight: bold;
+}
+.seller{
+	font-size: 11px;
+	color: #69B107;
+}
+
+
+// FOOTER
+.outerfooter{
+	background-color: $yellow;
+	border-top:6px solid darken($yellow, 5%);
+}
+.footer{
+	padding:1em;
+	background: transparent;
+	
+	p{
+		font-size:12px;
+		color:$pinkish;
+		text-align: center;
+		margin: 0;
+		}
+}
+.reveal-modal{
+	.image{
+		width:15%;
+		float: left;
+	}
+	.details{
+		width: 85% ;
+		float: right;
+
+		h2{
+			color:$black;
+			font-size: rem-calc(25);
+			line-height: rem-calc(25);
+			font-weight:bold;
+			margin-bottom: 1em;
+		}
+		p{
+			color:lighten($black, 5%);
+		}
+		.price{
+			font-size:2em;
+		}
+		ul{
+			margin:0;
+			li{
+				list-style: none;
+			}
+		}
+	}
+}
+
+.active{
+	font-weight:bold;
+	color: $yellow;
+}

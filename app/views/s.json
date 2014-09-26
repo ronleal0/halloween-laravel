@@ -1,0 +1,50 @@
+[{
+
+	label: "AIR WI-FI 128GB SPACE GRAY",
+	image: [
+	{
+		@attributes: {
+			type: "NORMAL",
+			name: "D",
+			height: "100",
+			width: "100",
+			source: "http://images.example.com/images/offers/DE/710/001/321/038/D_001321038324_DE_710.jpg"
+		}
+		},
+		{
+			@attributes: {
+				type: "NORMAL",
+				name: "D",
+				height: "100",
+				width: "100",
+				source: "http://images.example.com/images/offers/DE/710/001/321/038/D_001321038324_DE_710.jpg"
+			}
+		}
+		],
+	description: "Description for IPAD AIR WI-FI 128GB SPACE GRAY",
+},
+{
+
+	label: "ME898B/A - IPAD AIR WI-FI 128GB SPACE GRAY",
+	image: [
+	{
+		@attributes: {
+			type: "NORMAL",
+			name: "D",
+			height: "100",
+			width: "100",
+			source: "http://images.example.com/images/offers/DE/710/001/321/038/D_001321038324_DE_710.jpg"
+		}
+		},
+		{
+			@attributes: {
+				type: "NORMAL",
+				name: "D",
+				height: "100",
+				width: "100",
+				source: "http://images.example.com/images/offers/DE/710/001/321/038/D_001321038324_DE_710.jpg"
+			}
+		}
+		],
+	description: "Apple ME898B/A - IPAD AIR WI-FI 128GB SPACE GRAY",
+}]
