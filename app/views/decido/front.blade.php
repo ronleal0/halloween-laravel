@@ -9,7 +9,7 @@
     <div class="outer">
     <div class="row header">
       <div class="large-12 columns ">
-        <h1 class="logo"><a href="/">Halloween</a></h1>
+        <h1 class="logo"><a href="/decido/">Halloween</a></h1>
       </div>
     </div>
     </div>
@@ -20,10 +20,10 @@
                <div class="large-7 large-centered columns">
                   <div class="row collapse">
                     <div class="small-10 columns">
-                      <input style="margin:0" type="text" name="query" value="" placeholder="Search for Halloween items..">
+                      <input style="margin:0" type="text" name="query" value="" placeholder="Suche nach Halloween-Artikel...">
                     </div>
                     <div class="small-2 columns">
-                      <input id="searchButton" style="margin:0" type="submit" value="search" class="button postfix">
+                      <input id="searchButton" style="margin:0" type="submit" value="suche" class="button postfix">
                     </div>
                   </div>
                 </div>
@@ -90,13 +90,13 @@
                 <ul>
                   <li class="prodName"><a target="_blank" href="{{ $product->offer->url }}">{{$product->label}}</a></li>
                   
-                    <p class="pitch">@if($product->offer->pitch){{ $product->offer->pitch }}@endif</p>
+                    
                   
                   <li><a href="" data-reveal-id="offer{{$product['oid']}}" class="modal moreinfo">more info</a></li>
                   <li class="price">${{ $product->offer->price }}</li>
                   <li class="seller">{{ $product->offer->merchant->label }}</li>
                 </ul>
-                <a target="_blank" href="{{ $product->offer->url }}" class="secondary button">See it</a>
+                <a target="_blank" href="{{ $product->offer->url }}" class="secondary button">Preisvergleich</a>
               </div>
 
               @endforeach

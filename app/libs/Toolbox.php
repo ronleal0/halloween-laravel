@@ -190,9 +190,19 @@ class Toolbox {
 		echo $test;
 	}
 
-	public static function getresultswithfilter($query,$pge=NULL){
+	public static function getresultswithfilter($query,$pge=NULL, $fd=NULL){
 		$query = self::cleanQuery($query);
-		$url = "http://become_seo:5gZy1XRg@us.channel.become.com/livexml/3.1/become_discount-us.portal/query;result-filter;product-results/$query?pge=$pge&mode=default";
+		$url = "http://ronaldoleal:x2w3oFQv@us.channel.become.com/livexml/3.1/become_google_sem-us.portal/query;popular-products;product-results/$query?pge=$pge&mode=default&fd=$fd";
+		// $url = "http://become_seo:5gZy1XRg@us.channel.become.com/livexml/3.1/become_discount-us.portal/query;result-filter;product-results/$query?pge=$pge&mode=default&fd=$fd";
+		$xml = self::getXML($url);
+		// $products = $xml->xpath('//product-results-module/product-results');
+		return $xml;
+	}
+
+	public static function getresultswithfilterDecido($query,$pge=NULL, $fd=NULL){
+		$query = self::cleanQuery($query);
+		$url = "http://ronaldoleal:x2w3oFQv@de.channel.become.eu/livexml/3.1/decido_sem-de.portal/query;popular-products;product-results/$query?pge=$pge&mode=default&fd=$fd";
+		// $url = "http://become_seo:5gZy1XRg@us.channel.become.com/livexml/3.1/become_discount-us.portal/query;result-filter;product-results/$query?pge=$pge&mode=default&fd=$fd";
 		$xml = self::getXML($url);
 		// $products = $xml->xpath('//product-results-module/product-results');
 		return $xml;

@@ -9076,91 +9076,122 @@ th.hide-for-touch {
 .sidebar .boxes ul li a {
   width: 100%;
   display: block;
-  font-size: 0.6875rem;
-  padding: 0 5px;
+  font-size: 0.75rem;
+  padding: 8px 5px;
   border-bottom: 1px dashed #ddd;
   color: #25292A;
+  line-height: 15px;
+  text-transform: lowercase;
 }
-/* line 110, ../scss/app.scss */
+/* line 111, ../scss/app.scss */
 .sidebar .boxes ul li a:hover {
   background: #ddd;
 }
 
-/* line 118, ../scss/app.scss */
+/* line 119, ../scss/app.scss */
+#searchButton {
+  background-color: #E68932 !important;
+}
+/* line 122, ../scss/app.scss */
+#searchButton:hover {
+  background-color: #cc7019 !important;
+}
+/* line 125, ../scss/app.scss */
+#searchButton:focus {
+  background-color: #cc7019;
+}
+
+/* line 130, ../scss/app.scss */
+.logo a {
+  color: #E68932;
+}
+
+/* line 134, ../scss/app.scss */
 .main {
   padding-top: 1em;
   padding-bottom: 1em;
 }
 
-/* line 123, ../scss/app.scss */
+/* line 139, ../scss/app.scss */
 .productPart .productbox {
   border: 1px solid #ddd;
   padding: 1em;
 }
-/* line 126, ../scss/app.scss */
+/* line 142, ../scss/app.scss */
 .productPart .productbox img {
   margin: 0 auto;
   display: block;
   width: 145px;
 }
-/* line 132, ../scss/app.scss */
+/* line 148, ../scss/app.scss */
 .productPart .productbox ul {
   margin: 0;
 }
-/* line 134, ../scss/app.scss */
+/* line 150, ../scss/app.scss */
 .productPart .productbox ul li {
   list-style: none;
   display: block;
 }
-/* line 140, ../scss/app.scss */
+/* line 156, ../scss/app.scss */
 .productPart .productbox .button {
   display: block;
   width: 100%;
 }
 
-/* line 146, ../scss/app.scss */
+/* line 162, ../scss/app.scss */
+.pitch {
+  color: orange;
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: bold;
+  height: 15px;
+}
+
+/* line 169, ../scss/app.scss */
 .prodName {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   margin-top: 10px;
   line-height: 15px;
-  height: 25px;
+  height: 4em;
 }
-/* line 151, ../scss/app.scss */
+/* line 174, ../scss/app.scss */
 .prodName a {
   font-size: 13px;
   font-weight: bold;
+  height: 2.5em;
+  display: block;
 }
 
-/* line 156, ../scss/app.scss */
+/* line 181, ../scss/app.scss */
 .moreinfo {
   font-size: 12px;
   margin: .5em 0;
 }
 
-/* line 160, ../scss/app.scss */
+/* line 185, ../scss/app.scss */
 .price {
   color: #EF9303;
   font-weight: bold;
 }
 
-/* line 164, ../scss/app.scss */
+/* line 189, ../scss/app.scss */
 .seller {
   font-size: 11px;
   color: #69B107;
 }
 
-/* line 171, ../scss/app.scss */
+/* line 196, ../scss/app.scss */
 .outerfooter {
   background-color: #E68932;
   border-top: 6px solid #e37c1c;
 }
 
-/* line 175, ../scss/app.scss */
+/* line 200, ../scss/app.scss */
 .footer {
   padding: 1em;
   background: transparent;
 }
-/* line 179, ../scss/app.scss */
+/* line 204, ../scss/app.scss */
 .footer p {
   font-size: 12px;
   color: #FAECE1;
@@ -9168,17 +9199,17 @@ th.hide-for-touch {
   margin: 0;
 }
 
-/* line 187, ../scss/app.scss */
+/* line 212, ../scss/app.scss */
 .reveal-modal .image, dialog .image {
   width: 15%;
   float: left;
 }
-/* line 191, ../scss/app.scss */
+/* line 216, ../scss/app.scss */
 .reveal-modal .details, dialog .details {
   width: 85%;
   float: right;
 }
-/* line 195, ../scss/app.scss */
+/* line 220, ../scss/app.scss */
 .reveal-modal .details h2, dialog .details h2 {
   color: #25292A;
   font-size: 1.5625rem;
@@ -9186,25 +9217,31 @@ th.hide-for-touch {
   font-weight: bold;
   margin-bottom: 1em;
 }
-/* line 202, ../scss/app.scss */
+/* line 227, ../scss/app.scss */
 .reveal-modal .details p, dialog .details p {
   color: #313638;
 }
-/* line 205, ../scss/app.scss */
+/* line 230, ../scss/app.scss */
 .reveal-modal .details .price, dialog .details .price {
   font-size: 2em;
 }
-/* line 208, ../scss/app.scss */
+/* line 233, ../scss/app.scss */
 .reveal-modal .details ul, dialog .details ul {
   margin: 0;
 }
-/* line 210, ../scss/app.scss */
+/* line 235, ../scss/app.scss */
 .reveal-modal .details ul li, dialog .details ul li {
   list-style: none;
 }
 
-/* line 217, ../scss/app.scss */
+/* line 242, ../scss/app.scss */
 .active {
   font-weight: bold;
   color: #E68932;
+}
+
+/* line 247, ../scss/app.scss */
+#infscr-loading {
+  margin: 1em 0;
+  text-align: center;
 }

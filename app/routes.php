@@ -14,6 +14,14 @@
 Route::get('/', 'ProductController@home'); // Home
 Route::get('/q','ProductController@query');	// Query page
 
+
 // testing 
 Route::get('/test', 'ProductController@home'); 
 Route::get('/data', 'ProductController@data'); // get the data for visualization
+
+
+
+// DECIDO ROUTES
+Route::get('/decido', 'DecidoController@home');
+Route::get('/decido/q', 'DecidoController@data');
+Route::get('/decido/data', 'DecidoController@data');

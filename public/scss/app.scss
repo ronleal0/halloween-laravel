@@ -102,17 +102,33 @@
 				a{
 					width:100%;
 					display:block;
-					font-size: rem-calc(11);
-					padding: 0 5px;
+					font-size: rem-calc(12);
+					padding: 8px 5px;
 					border-bottom:1px dashed #ddd;
 					color:$black;
-
+					line-height: 15px;
+					text-transform:lowercase;
 					&:hover{
 						background:$lightgray;
 					}
 				}
 			}
 		}
+	}
+}
+#searchButton{
+	background-color: $yellow!important;
+
+	&:hover{
+		background-color: darken($yellow,10%)!important;
+	}
+	&:focus{
+		background-color: darken($yellow,10%);
+	}
+}
+.logo{
+	a{
+		color:$yellow;
 	}
 }
 .main{
@@ -143,14 +159,23 @@
 		}
 	}
 }
+.pitch{
+	color: orange;
+	font-size:12px;
+	line-height: 15px;
+	font-weight: bold;
+	height: 15px;
+}
 .prodName{
-	margin-bottom:20px;
+	margin-bottom:15px;
 	margin-top: 10px;
 	line-height: 15px;
-	height:25px;
+	height:4em;
 	a{
 		font-size: 13px;
 		font-weight: bold;
+		height: 2.5em;
+		display:block;
 	}
 }
 .moreinfo{
@@ -217,4 +242,9 @@
 .active{
 	font-weight:bold;
 	color: $yellow;
+}
+
+#infscr-loading{
+	margin:1em 0;
+	text-align: center;
 }

@@ -8,6 +8,7 @@
     <script src="/bower_components/angular/angular.min.js"></script> 
     <script src="/bower_components/foundation/js/foundation.min.js"></script> 
     <script src="/js/jquery.infinitescroll.min.js"></script>
+    <script src="/js/jQuery.smartEllipsis.min.js"></script>
     <script src="/js/app.js"></script>
     
   </body>
