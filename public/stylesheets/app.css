@@ -9117,28 +9117,38 @@ th.hide-for-touch {
   border: 1px solid #ddd;
   padding: 1em;
 }
-/* line 142, ../scss/app.scss */
+/* line 143, ../scss/app.scss */
 .productPart .productbox img {
   margin: 0 auto;
   display: block;
   width: 145px;
 }
-/* line 148, ../scss/app.scss */
+/* line 149, ../scss/app.scss */
 .productPart .productbox ul {
   margin: 0;
 }
-/* line 150, ../scss/app.scss */
+/* line 151, ../scss/app.scss */
 .productPart .productbox ul li {
   list-style: none;
   display: block;
 }
-/* line 156, ../scss/app.scss */
+/* line 157, ../scss/app.scss */
 .productPart .productbox .button {
   display: block;
   width: 100%;
 }
 
-/* line 162, ../scss/app.scss */
+/* line 163, ../scss/app.scss */
+.before {
+  display: block;
+  color: #ddd;
+  font-weight: normal;
+  font-size: 12px;
+  text-decoration: line-through;
+  height: 15px;
+}
+
+/* line 171, ../scss/app.scss */
 .pitch {
   color: orange;
   font-size: 12px;
@@ -9147,14 +9157,14 @@ th.hide-for-touch {
   height: 15px;
 }
 
-/* line 169, ../scss/app.scss */
+/* line 178, ../scss/app.scss */
 .prodName {
   margin-bottom: 15px;
   margin-top: 10px;
   line-height: 15px;
   height: 4em;
 }
-/* line 174, ../scss/app.scss */
+/* line 183, ../scss/app.scss */
 .prodName a {
   font-size: 13px;
   font-weight: bold;
@@ -9162,36 +9172,38 @@ th.hide-for-touch {
   display: block;
 }
 
-/* line 181, ../scss/app.scss */
+/* line 190, ../scss/app.scss */
 .moreinfo {
   font-size: 12px;
   margin: .5em 0;
 }
 
-/* line 185, ../scss/app.scss */
+/* line 194, ../scss/app.scss */
 .price {
   color: #EF9303;
   font-weight: bold;
+  line-height: 15px;
+  margin: .7em 0;
 }
 
-/* line 189, ../scss/app.scss */
+/* line 200, ../scss/app.scss */
 .seller {
   font-size: 11px;
   color: #69B107;
 }
 
-/* line 196, ../scss/app.scss */
+/* line 207, ../scss/app.scss */
 .outerfooter {
   background-color: #E68932;
   border-top: 6px solid #e37c1c;
 }
 
-/* line 200, ../scss/app.scss */
+/* line 211, ../scss/app.scss */
 .footer {
   padding: 1em;
   background: transparent;
 }
-/* line 204, ../scss/app.scss */
+/* line 215, ../scss/app.scss */
 .footer p {
   font-size: 12px;
   color: #FAECE1;
@@ -9199,17 +9211,17 @@ th.hide-for-touch {
   margin: 0;
 }
 
-/* line 212, ../scss/app.scss */
+/* line 223, ../scss/app.scss */
 .reveal-modal .image, dialog .image {
   width: 15%;
   float: left;
 }
-/* line 216, ../scss/app.scss */
+/* line 227, ../scss/app.scss */
 .reveal-modal .details, dialog .details {
   width: 85%;
   float: right;
 }
-/* line 220, ../scss/app.scss */
+/* line 231, ../scss/app.scss */
 .reveal-modal .details h2, dialog .details h2 {
   color: #25292A;
   font-size: 1.5625rem;
@@ -9217,30 +9229,30 @@ th.hide-for-touch {
   font-weight: bold;
   margin-bottom: 1em;
 }
-/* line 227, ../scss/app.scss */
+/* line 238, ../scss/app.scss */
 .reveal-modal .details p, dialog .details p {
   color: #313638;
 }
-/* line 230, ../scss/app.scss */
+/* line 241, ../scss/app.scss */
 .reveal-modal .details .price, dialog .details .price {
   font-size: 2em;
 }
-/* line 233, ../scss/app.scss */
+/* line 244, ../scss/app.scss */
 .reveal-modal .details ul, dialog .details ul {
   margin: 0;
 }
-/* line 235, ../scss/app.scss */
+/* line 246, ../scss/app.scss */
 .reveal-modal .details ul li, dialog .details ul li {
   list-style: none;
 }
 
-/* line 242, ../scss/app.scss */
+/* line 253, ../scss/app.scss */
 .active {
   font-weight: bold;
   color: #E68932;
 }
 
-/* line 247, ../scss/app.scss */
+/* line 258, ../scss/app.scss */
 #infscr-loading {
   margin: 1em 0;
   text-align: center;

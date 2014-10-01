@@ -139,6 +139,7 @@
 	.productbox{
 		border:1px solid #ddd;
 		padding: 1em;
+		// height: 450px!important;
 		img{
 			margin:0 auto;
 			display: block;
@@ -158,6 +159,14 @@
 			width:100%;
 		}
 	}
+}
+.before{
+	display:block;
+	color:$lightgray;
+	font-weight: normal;
+	font-size:12px;
+	text-decoration: line-through;
+	height: 15px;
 }
 .pitch{
 	color: orange;
@@ -185,6 +194,8 @@
 .price{
 	color: #EF9303;
 	font-weight: bold;
+	line-height: 15px;
+	margin: .7em 0;
 }
 .seller{
 	font-size: 11px;

@@ -52,6 +52,14 @@
              @endforeach
            </ul>
          </div>
+         <!-- <div class="boxes">
+          <p>Merchants</p>
+           <ul>
+             @foreach($merchants as $merchant)
+                <li><a href="/?query={{$query}}&mid={{$merchant['mid']}}">{{$merchant->label}}</a></li>
+             @endforeach
+           </ul>
+         </div> -->
         </div>
        @endif
       <!-- END OF SIDEBAR -->
@@ -76,6 +84,7 @@
                       <p>{{$product->description}}</p>
                       @endif
                     <ul>
+
                       <li class="price">${{ $product->offer->price }}</li>
                       <li class="seller">{{ $product->offer->merchant->label }}</li>
                     </ul>
@@ -91,9 +100,11 @@
                   <li class="prodName"><a target="_blank" href="{{ $product->offer->url }}">{{$product->label}}</a></li>
                   
                     <p class="pitch">@if($product->offer->pitch){{ $product->offer->pitch }}@endif</p>
-                  
                   <li><a href="" data-reveal-id="offer{{$product['oid']}}" class="modal moreinfo">more info</a></li>
-                  <li class="price">${{ $product->offer->price }}</li>
+                  <li class="price">
+                    <span class="before">@if($product->offer->{'price-info'}[0])${{$product->offer->{'price-info'}[0]}}@endif</span> 
+                    ${{ $product->offer->price }}
+                  </li>
                   <li class="seller">{{ $product->offer->merchant->label }}</li>
                 </ul>
                 <a target="_blank" href="{{ $product->offer->url }}" class="secondary button">See it</a>
