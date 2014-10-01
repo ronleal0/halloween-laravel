@@ -93,7 +93,7 @@
                     
                   
                   <li><a href="" data-reveal-id="offer{{$product['oid']}}" class="modal moreinfo">more info</a></li>
-                  <li class="price">${{ $product->offer->price }}</li>
+                  <li class="price">{{ $product->offer->price }} €</li>
                   <li class="seller">{{ $product->offer->merchant->label }}</li>
                 </ul>
                 <a target="_blank" href="{{ $product->offer->url }}" class="secondary button">Preisvergleich</a>
