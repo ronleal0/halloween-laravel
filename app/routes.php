@@ -25,3 +25,7 @@ Route::get('/data', 'ProductController@data'); // get the data for visualization
 Route::get('/decido', 'DecidoController@home');
 Route::get('/decido/q', 'DecidoController@data');
 Route::get('/decido/data', 'DecidoController@data');
+
+Route::get('/php', function(){
+	echo phpinfo();
+});

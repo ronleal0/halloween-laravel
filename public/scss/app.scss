@@ -44,18 +44,10 @@
 	// background: #ccc;
 	// border: 1px solid #333;
 }
-.outerMain{
-	background-image: url(../img/bg1.png);
-	background-repeat: repeat-x;
+body{
+	background-color:black;
 }
 
-.outer{
-	background-image:url(../img/pattern.png);
-	background-repeat: repeat-x;
-	-webkit-background-size: 30%;
-	background-size: 45%;
-	background-position: bottom;
-}
 .header{
 	background-color:transparent!important;
 	background-image: url(../img/creep.png)!important;
