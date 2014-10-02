@@ -23,21 +23,9 @@ $('.productPart').infinitescroll({
 	if(submitto === undefined){
 		submitto = '/q?query=' + word;
 	}
-	console.log(submitto);
-	window.location.href = submitto;
+	// console.log(submitto);
+	// window.location.href = submitto;
 	return false;
 	}
 
-
-	 // <!--  <div class="large-2 columns sidebar">
-  //       @foreach($filters as $filter)
-  //       <div class="boxes">
-  //         <p>{{$filter->label}} </p>
-  //         <ul>
-  //           @foreach($filter->{'dimension-class'} as $class)
-  //           <li> </a></li>
-  //           @endforeach
-  //         </ul>
-  //       </div>
-  //       @endforeach
-  //     </div> -->
+$('.prodName a').dotdotdot();

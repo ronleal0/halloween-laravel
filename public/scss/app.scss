@@ -1,6 +1,7 @@
 @import "settings";
 @import "foundation";
 @import "colors";
+@import "mixins";
 // Or selectively include components
 // @import
 //   "foundation/components/accordion",
@@ -177,6 +178,8 @@ body{
 		font-weight: bold;
 		height: 2.5em;
 		display:block;
+
+		
 	}
 }
 .moreinfo{

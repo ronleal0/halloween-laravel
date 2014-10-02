@@ -8,5 +8,10 @@
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Nosifer' rel='stylesheet' type='text/css'>
   </head>
+  <script>
+  	if (typeof window.document.createElement('div').style.webkitLineClamp !== 'undefined') {
+	    document.querySelector('html').classList.add('webkit-line-clamp');
+	}
+  </script>
 <body>
 	
