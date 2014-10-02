@@ -2,4 +2,4 @@
 
 return array(
 	'debug' => false
-	);
+);
