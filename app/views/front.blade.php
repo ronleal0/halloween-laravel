@@ -67,7 +67,7 @@
           @if($hasResult)
             <?php 
               $page = new NewPagination();
-              $pageNumbers = $page->paginate($products, 30);
+              $pageNumbers = $page->paginate($products, 20);
               $products = $page->fetchResults();
             ?>
 
