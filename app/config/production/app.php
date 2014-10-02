@@ -1,6 +1,5 @@
 <?php 
 
 return array(
-	'debug' => false;
-
-	)
+	'debug' => false
+	);
