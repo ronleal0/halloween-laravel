@@ -70,6 +70,46 @@ body{
 	padding-right:.5%;
 }
 // SIDEBAR
+
+.accordionTitle{
+	display: box!important;
+	width: 100%;
+	background: $black!important;
+	color: $pinkish!important;
+	font-weight: bold;
+	text-align:center;
+	margin-bottom: 5px;
+	padding: 3px 0!important;
+	font-size: rem-calc(12)!important;
+
+	&:hover{
+		background:lighten($black, 15%)!important;
+	}
+}
+.accordionContent{
+	padding: 0!important;
+	ul{
+		margin: 0;
+		li{
+			list-style: none;
+
+			a{
+				width:100%;
+				display:block;
+				font-size: rem-calc(12);
+				padding: 8px 5px;
+				border-bottom:1px dashed #ddd;
+				color:$black;
+				line-height: 15px;
+				text-transform:lowercase;
+				&:hover{
+					background:$lightgray;
+				}
+			}
+		}
+	}
+}
+// ACCORDION
 .sidebar{
 	padding:0;
 	border:1px solid $lightgray;

@@ -1,8 +1,6 @@
 <?php 
   include(app_path().'/libs/NewPagination.php');
-
  ?>  
-
 
 @extends('layout.master')
 @section('content')
@@ -15,12 +13,12 @@
     </div>
     <div class="outerMain">
       <div class="row main">
-      <div class="large-12 columns searchbox" onSubmit="return dosearch();">
-          <form name="searchform" method="get">
+      <div class="large-12 columns searchbox" >
+          <form name="searchform" method="get" onSubmit="return dosearch();">
                <div class="large-7 large-centered columns">
                   <div class="row collapse">
                     <div class="small-10 columns">
-                      <input style="margin:0" type="text" name="query" value="" placeholder="Search for Halloween items..">
+                      <input style="margin:0" type="text" name="query" value="" placeholder="Search for Halloween items.." required>
                     </div>
                     <div class="small-2 columns">
                       <input id="searchButton" style="margin:0" type="submit" value="search" class="button postfix">
@@ -39,27 +37,32 @@
       </div>
        @if($hasResult)
         <div class="large-2 columns sidebar">
-        
-         <div class="boxes">
-           <p>Suggested Products</p>
-           <ul>
-             @foreach($popularProducts as $popProds)
-             <li>
-              <a target="_blank" href="{{$popProds->offer->url}}">
-                {{$popProds->label}}
-              </a>
-             </li>
-             @endforeach
-           </ul>
-         </div>
-         <!-- <div class="boxes">
-          <p>Merchants</p>
-           <ul>
-             @foreach($merchants as $merchant)
-                <li><a href="/?query={{$query}}&mid={{$merchant['mid']}}">{{$merchant->label}}</a></li>
-             @endforeach
-           </ul>
-         </div> -->
+          <dl class="accordion" data-accordion>
+            <dd class="accordion-navigation">
+              <a href="#panel1" class="accordionTitle">Suggested Products</a>
+              <div id="panel1" class="accordionContent active content">
+                 <ul>
+                 @foreach($popularProducts as $popProds)
+                 <li>
+                  <a target="_blank" href="{{$popProds->offer->url}}">{{$popProds->label}}</a>
+                 </li>
+                 @endforeach
+               </ul>
+              </div>
+            </dd>
+            @foreach($filters as $filter)
+              <dd class="accordion-navigation">
+              <a href="#{{$filter->label}}" class="accordionTitle">{{$filter->label}}</a>
+              <div id="{{$filter->label}}" class="accordionContent content">
+                 <ul>
+                  @foreach($filter->{'dimension-class'} as $class)
+                  <li><a href="/q?query={{$class->label}}&fd={{$class['fdid']}}">{{$class->label}}</a></li>
+                  @endforeach
+                </ul>
+              </div>
+              </dd>
+            @endforeach
+          </dl>
         </div>
        @endif
       <!-- END OF SIDEBAR -->
@@ -86,7 +89,7 @@
                     <ul>
 
                       <li class="price">${{ $product->offer->price }}</li>
-                      <li class="seller">{{ $product->offer->merchant->label }}</li>
+                       <li class="seller"> @if($product['nr-of-merchants'] != 0){{ $product->offer->merchant->label }}@endif</li>
                     </ul>
                     <p><a target="_blank" href="{{ $product->offer->url }}" class="secondary button">See Product</a></p>
                   </div>
@@ -105,7 +108,7 @@
                     <span class="before">@if($product->offer->{'price-info'}[0])${{$product->offer->{'price-info'}[0]}}@endif</span> 
                     ${{ $product->offer->price }}
                   </li>
-                  <li class="seller">{{ $product->offer->merchant->label }}</li>
+                   <li class="seller"> @if($product['nr-of-merchants'] != 0){{ $product->offer->merchant->label }}@endif</li>
                 </ul>
                 <a target="_blank" href="{{ $product->offer->url }}" class="secondary button">See it</a>
               </div>

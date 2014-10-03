@@ -1,6 +1,16 @@
 // Foundation JavaScript
 // Documentation can be found at: http://foundation.zurb.com/docs
-$(document).foundation();
+$(document).foundation({
+	accordion: {
+	    // specify the class used for active (or open) accordion panels
+	    active_class: 'active',
+	    // allow multiple accordion panels to be active at the same time
+	    multi_expand: false,
+	    // allow accordion panels to be closed by clicking on their headers
+	    // setting to false only closes accordion panels when another is opened
+	    toggleable: true
+ 	 }
+});
 
 $('.productPart').infinitescroll({
  
@@ -10,9 +20,13 @@ $('.productPart').infinitescroll({
                    // selector for the NEXT link (to page 2)
     itemSelector : ".productbox"    
                    // selector for all items you'll retrieve
-  });
+ });
 
-	function dosearch() {
+	
+
+$('.prodName a').dotdotdot();
+
+function dosearch() {
 	var sf=document.searchform;
 	for (i=sf.siteSearch.length-1; i > -1; i--) {
 		if (sf.siteSearch[i].checked) {
@@ -23,9 +37,22 @@ $('.productPart').infinitescroll({
 	if(submitto === undefined){
 		submitto = '/q?query=' + word;
 	}
-	// console.log(submitto);
-	// window.location.href = submitto;
+	console.log(submitto);
+	window.location.href = submitto;
 	return false;
 	}
-
-$('.prodName a').dotdotdot();
+function dosearchDecido() {
+	var sf=document.searchform;
+	for (i=sf.siteSearch.length-1; i > -1; i--) {
+		if (sf.siteSearch[i].checked) {
+			var submitto = sf.siteSearch[i].value + escape(sf.query.value);
+		}
+	}
+	var word = escape(sf.query.value);
+	if(submitto === undefined){
+		submitto = '/decido/q?query=' + word;
+	}
+	console.log(submitto);
+	window.location.href = submitto;
+	return false;
+	}

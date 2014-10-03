@@ -23,7 +23,7 @@ Route::get('/data', 'ProductController@data'); // get the data for visualization
 
 // DECIDO ROUTES
 Route::get('/decido', 'DecidoController@home');
-Route::get('/decido/q', 'DecidoController@data');
+Route::get('/decido/q', 'DecidoController@query');
 Route::get('/decido/data', 'DecidoController@data');
 
 Route::get('/php', function(){

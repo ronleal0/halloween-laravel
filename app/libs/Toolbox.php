@@ -192,17 +192,18 @@ class Toolbox {
 
 	public static function getresultswithfilter($query,$pge=NULL, $mid=""){
 		$query = self::cleanQuery($query);
-		$addMid = ($mid != "") ? "&mid=$mid" : '';
-		$url = "http://ronaldoleal:x2w3oFQv@us.channel.become.com/livexml/3.1/become_google_sem-us.portal/query;product-results;popular-merchants-module;popular-products/$query?pge=$pge" . $addMid;
+		$addMid = ($mid != "") ? "&fd=$mid" : '';
+		$url = "http://ronaldoleal:x2w3oFQv@us.channel.become.com/livexml/3.1/become_google_sem-us.portal/query;product-results;result-filter;popular-merchants-module;popular-products/$query?pge=$pge" . $addMid;
 		// $url = "http://become_seo:5gZy1XRg@us.channel.become.com/livexml/3.1/become_discount-us.portal/query;result-filter;product-results/$query?pge=$pge&mode=default&fd=$fd";
 		$xml = self::getXML($url);
 		// $products = $xml->xpath('//product-results-module/product-results');
 		return $xml;
 	}
 
-	public static function getresultswithfilterDecido($query,$pge=NULL, $fd=NULL){
+	public static function getresultswithfilterDecido($query,$pge=NULL, $mid="")	{
 		$query = self::cleanQuery($query);
-		$url = "http://ronaldoleal:x2w3oFQv@de.channel.become.eu/livexml/3.1/decido_sem-de.portal/query;popular-products;product-results/$query?pge=$pge&fd=$fd";
+		$addMid = ($mid != "") ? "&fd=$mid" : '';
+		$url = "http://ronaldoleal:x2w3oFQv@de.channel.become.eu/livexml/3.1/decido_sem-de.portal/query;product-results;result-filter;popular-merchants-module;popular-products/$query?pge=$pge" . $addMid;
 		// $url = "http://become_seo:5gZy1XRg@us.channel.become.com/livexml/3.1/become_discount-us.portal/query;result-filter;product-results/$query?pge=$pge&mode=default&fd=$fd";
 		$xml = self::getXML($url);
 		// $products = $xml->xpath('//product-results-module/product-results');
