@@ -5,7 +5,7 @@ class DecidoController extends BaseController{
 
 
 	public function home(){
-		$defaultQuery = 'halloweenmaske';
+		$defaultQuery = 'halloween';
 		$fd = (Input::get('mid')!= '') ? Input::get('mid') : '';
 		$all = Toolbox::getresultswithfilterDecido($defaultQuery,196, $fd);	
 
