@@ -3,9 +3,9 @@
 
  ?>  
 
-{{URL::current()}}
 @extends('layout.master')
 @section('content')
+<link href='http://fonts.googleapis.com/css?family=Creepster' rel='stylesheet' type='text/css'>
     <div class="outer">
     <div class="row header">
       <div class="large-12 columns ">
@@ -15,28 +15,36 @@
     </div>
     <div class="outerMain">
       <div class="row main">
-      <div class="large-12 columns searchbox" onSubmit="return dosearchDecido();">
-          <form name="searchform" method="get">
-               <div class="large-7 large-centered columns">
-                  <div class="row collapse">
-                    <div class="small-10 columns">
-                      <input style="margin:0" type="text" name="query" value="" placeholder="Suche nach Halloween-Artikel..." required>
+        <div class="large-12 columns">
+          <div class="large-2 columns decidologo">
+            <p>Powered by:</p>
+            <img src="/img/decido-logo.png" alt="">
+          </div>
+          <div class="large-10 columns searchbox" onSubmit="return dosearchDecido();">
+            <form name="searchform" method="get">
+                 <div class="large-7 large-centered columns">
+                    <div class="row collapse">
+                      <div class="small-10 columns">
+                        <input style="margin:0" type="text" name="query" value="" placeholder="Suche nach Halloween-Artikel..." required>
+                      </div>
+                      <div class="small-2 columns">
+                        <!-- <input id="searchButton" style="margin:0" type="submit" value="Suche" class="suchebutton"> -->
+                        <button id="searchButton" class="postfix"><span>Suche</span></button>
+                      </div>
                     </div>
-                    <div class="small-2 columns">
-                      <input id="searchButton" style="margin:0" type="submit" value="suche" class="button postfix">
+                  </div>
+                  <div class="large-7 large-centered columns">
+                    <div class="large-6 columns">
+                      <input type="radio" name="siteSearch" value="decido/q?query=" id="forthis"><label for="forthis">Search this page</label>
+                    </div>
+                    <div class="large-6 columns">
+                      <input type="radio" name="siteSearch" value="http://www.decido.de/suche?qry=" id="forthat"><label for="forthat">Search Decido.de</label>
                     </div>
                   </div>
-                </div>
-                <div class="large-7 large-centered columns">
-                  <div class="large-6 columns">
-                    <input type="radio" name="siteSearch" value="/q?query=" id="forthis"><label for="forthis">Search this page</label>
-                  </div>
-                  <div class="large-6 columns">
-                    <input type="radio" name="siteSearch" value="http://www.decido.de/suche?qry=" id="forthat"><label for="forthat">Search Decido.de</label>
-                  </div>
-                </div>
-          </form> 
-      </div>
+            </form> 
+        </div>
+        </div>
+   
       @if($hasResult)
         <div class="large-2 columns sidebar">
           <dl class="accordion" data-accordion>
@@ -46,7 +54,7 @@
                  <ul>
                  @foreach($popularProducts as $popProds)
                  <li>
-                  <a target="_blank" href="{{$popProds->offer->url}}">{{$popProds->label}}</a>
+                  <a class="suggested" target="_blank" href="{{$popProds->offer->url}}">{{$popProds->label}}</a>
                  </li>
                  @endforeach
                </ul>
@@ -58,17 +66,23 @@
               <div id="{{$filter->label}}" class="accordionContent content">
                  <ul>
                   @foreach($filter->{'dimension-class'} as $class)
-                  <li><a href="/q?query={{$class->label}}&fd={{$class['fdid']}}">{{$class->label}}</a></li>
+                  <li><a href="/decido/q?query={{$query}}&fd={{$class['fdid']}}">{{$class->label}}</a></li>
                   @endforeach
                 </ul>
               </div>
               </dd>
             @endforeach
+            <dd class="accordion-navigation">
+              <a target="_blank" href="http://www.decido.de/impressum.html" class="accordionTitle">Impressum</a>
+            </dd>
           </dl>
         </div>
        @endif
       <!-- END OF SIDEBAR -->
-      <div class="large-10 columns productPart" data-equalizer >
+      <div class="large-10 columns productPartDecido" data-equalizer >
+        <div class="large-12 columns">
+          <p>Results for {{$query}}</p>
+        </div>
           @if($hasResult)
             <?php 
               $page = new NewPagination();
@@ -90,10 +104,10 @@
                       <p>{{$product->description}}</p>
                       @endif
                     <ul>
-                      <li class="price">${{ $product->offer->price }}</li>
+                      <li class="price">{{ $product->offer->price }} € *</li>
                       <li class="seller"> @if($product['nr-of-merchants'] != 0){{ $product->offer->merchant->label }}@endif</li>
                     </ul>
-                    <p><a target="_blank" href="{{ $product->offer->url }}" class="secondary button">See Product</a></p>
+                    <p><a target="_blank" href="{{ $product->offer->url }}" class="secondary button">Zum Shop</a></p>
                   </div>
                   <a class="close-reveal-modal">&#215;</a>
                 </div>
@@ -106,11 +120,11 @@
                   
                     
                   
-                  <li><a href="" data-reveal-id="offer{{$product['oid']}}" class="modal moreinfo">more info</a></li>
-                  <li class="price">{{ $product->offer->price }} €</li>
+                  <li><a href="" data-reveal-id="offer{{$product['oid']}}" class="modal moreinfo">Mehr</a></li>
+                  <li class="price">{{ $product->offer->price }} € *</li>
                   <li class="seller"> @if($product['nr-of-merchants'] != 0){{ $product->offer->merchant->label }}@endif</li>
                 </ul>
-                <a target="_blank" href="{{ $product->offer->url }}" class="secondary button">Preisvergleich</a>
+                <a target="_blank" href="{{ $product->offer->url }}" class="secondary button">Zum Shop</a>
               </div>
               
             @endforeach
@@ -126,7 +140,7 @@
     </div>
     </div>
     @if($hasResult)
-      <div class="row">
+      <div class="row paginationrow">
           <ul style="hidden" class="pagination">
              @foreach($pageNumbers as $num)
             <?php 
@@ -146,6 +160,10 @@
           </ul>
         </div>
     @endif
-
+    <div class="row stickyfooter">
+      <p>
+        *Alle Preise verstehen sich inklusive der gesetzlichen Mehrwertsteuer und ggf. zuzüglich Versandkosten. Die Angebotsinformationen basieren auf den Angaben des jeweiligen Händlers und werden über automatisierte Prozesse aktualisiert. Wir sind um eine handelsüblich angemessene Richtigkeit der Produkt- und Preisangaben bemüht, es kann jedoch möglich sein, dass sich einzelne Preise und/oder Versandkosten in den jeweiligen Shops erhöht haben. Ausschlaggebend ist der beim jeweiligen Webshop angegebene Preis. Leider ist eine Echtzeit-Aktualisierung der Preise technisch nicht möglich.
+      </p>
+    </div>
     @stop
-
+  

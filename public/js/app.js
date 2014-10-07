@@ -12,19 +12,37 @@ $(document).foundation({
  	 }
 });
 
+
+
 $('.productPart').infinitescroll({
  
     navSelector  : ".pagination",            
                    // selector for the paged navigation (it will be hidden)
     nextSelector : ".pagination a:first",    
                    // selector for the NEXT link (to page 2)
-    itemSelector : ".productbox"    
+    itemSelector : ".productbox",
+
                    // selector for all items you'll retrieve
+ });
+
+$('.productPartDecido').infinitescroll({
+ 
+    navSelector  : ".pagination",            
+                   // selector for the paged navigation (it will be hidden)
+    nextSelector : ".pagination a:first",    
+                   // selector for the NEXT link (to page 2)
+    itemSelector : ".productbox",
+                   // selector for all items you'll retrieve
+    loading:{
+    	msgText: "<em>Ladet die nächsten Suchergebnisse...</em>"
+    }
+    
  });
 
 	
 
 $('.prodName a').dotdotdot();
+$('.suggested').dotdotdot();
 
 function dosearch() {
 	var sf=document.searchform;

@@ -9,8 +9,6 @@ class DecidoController extends BaseController{
 		$fd = (Input::get('mid')!= '') ? Input::get('mid') : '';
 		$all = Toolbox::getresultswithfilterDecido($defaultQuery,196, $fd);	
 
-		 // $products = $all->xpath('//product-results-module/product-results');
-		// Toolbox::debug($products);
 
 		if($all){
 			$filters = $all->xpath('//result-filter-module/result-filter/filter-dimension');
