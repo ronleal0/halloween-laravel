@@ -3,7 +3,7 @@
 
  ?>  
 
-
+{{URL::current()}}
 @extends('layout.master')
 @section('content')
     <div class="outer">
@@ -127,7 +127,7 @@
     </div>
     @if($hasResult)
       <div class="row">
-          <ul style="display:hidden" class="pagination">
+          <ul style="hidden" class="pagination">
              @foreach($pageNumbers as $num)
             <?php 
             if(isset($_GET['page'])){
@@ -137,10 +137,15 @@
             }
 
              ?>
-            <li><a {{($curr == $num) ? 'class="active"' : ''}} href="/test?page={{$num}}"></a></li>
+             @if($isQueryPage)
+            <li><a {{($curr == $num) ? 'class="active"' : ''}} href="{{URL::current()}}/?query={{$query}}&page={{$num}}">Page {{$num}}</a></li>
+            @else
+            <li><a {{($curr == $num) ? 'class="active"' : ''}} href="{{URL::current()}}/?page={{$num}}">Page {{$num}}</a></li>
+            @endif
              @endforeach
           </ul>
         </div>
     @endif
+
     @stop
 

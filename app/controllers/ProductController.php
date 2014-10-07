@@ -20,7 +20,8 @@ class ProductController extends BaseController{
 			->with('hasResult', true)
 			->with('popularProducts', $popularProducts)
 			->with('filters', $filters)
-			->with('merchants',$merchant);
+			->with('merchants',$merchant)
+			->with('isQueryPage', false);
 		}else{
 			return View::make('front')->with('hasResult', false)->with('query', $defaultQuery);
 		}
@@ -40,7 +41,8 @@ class ProductController extends BaseController{
 			->with('hasResult', true)
 			->with('popularProducts', $popularProducts)
 			->with('filters', $filters)
-			->with('merchants',$merchant);
+			->with('merchants',$merchant)
+			->with('isQueryPage', true);
 		}else{
 			return View::make('front')->with('hasResult', false)->with('query', $query);
 		}

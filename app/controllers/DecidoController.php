@@ -9,7 +9,7 @@ class DecidoController extends BaseController{
 		$fd = (Input::get('mid')!= '') ? Input::get('mid') : '';
 		$all = Toolbox::getresultswithfilterDecido($defaultQuery,196, $fd);	
 
-		// $products = $all->xpath('//product-results-module/product-results/product');
+		 // $products = $all->xpath('//product-results-module/product-results');
 		// Toolbox::debug($products);
 
 		if($all){
@@ -22,10 +22,13 @@ class DecidoController extends BaseController{
 			->with('hasResult', true)
 			->with('popularProducts', $popularProducts)
 			->with('filters', $filters)
-			->with('merchants',$merchant);
+			->with('merchants',$merchant)
+			->with('isQueryPage', false);
 		}else{
 			return View::make('decido.front')->with('hasResult', false)->with('query', $defaultQuery);
 		}
+
+		return View::make('testing')->with('products',$products);
 	} 
 	public function query(){
 		$query = Input::get('query');
@@ -33,7 +36,7 @@ class DecidoController extends BaseController{
 
 		$all = Toolbox::getresultswithfilterDecido($query, 196, $fd);
 
-		echo $all->{'product-results-module'}->{'product-results'}['total'];
+		// echo $all->{'product-results-module'}->{'product-results'}['total'];
 		if($all){
 			if($all->{'product-results-module'}->{'product-results'}['total'] != 0){
 				$popularProducts = $all->xpath('//popular-products-module/popular-products/product');
@@ -45,7 +48,8 @@ class DecidoController extends BaseController{
 				->with('hasResult', true)
 				->with('popularProducts', $popularProducts)
 				->with('filters', $filters)
-				->with('merchants',$merchant);
+				->with('merchants',$merchant)
+				->with('isQueryPage', true);
 			}else{
 				return View::make('decido.front')
 				->with('hasResult', false)

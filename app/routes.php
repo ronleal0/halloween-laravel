@@ -21,11 +21,16 @@ Route::get('/data', 'ProductController@data'); // get the data for visualization
 
 
 
+
+// BECOME ROUTES
+Route::get('/become', 'ProductController@home'); // Home
+Route::get('/become/q','ProductController@query');	// Query page
+
 // DECIDO ROUTES
 Route::get('/decido', 'DecidoController@home');
 Route::get('/decido/q', 'DecidoController@query');
 Route::get('/decido/data', 'DecidoController@data');
 
-Route::get('/php', function(){
-	echo phpinfo();
+Route::get('/become/query', function(){
+	echo URL::current();
 });

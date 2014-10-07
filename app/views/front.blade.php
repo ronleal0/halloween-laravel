@@ -27,7 +27,7 @@
                 </div>
                 <div class="large-7 large-centered columns">
                   <div class="large-6 columns">
-                    <input type="radio" name="siteSearch" value="/q?query=" id="forthis"><label for="forthis">Search this page</label>
+                    <input type="radio" name="siteSearch" value="/become/q?query=" id="forthis"><label for="forthis">Search this page</label>
                   </div>
                   <div class="large-6 columns">
                     <input type="radio" name="siteSearch" value="http://www.become.com/q?qry=" id="forthat"><label for="forthat">Search Become</label>
@@ -135,7 +135,11 @@
             }
 
              ?>
-            <li><a {{($curr == $num) ? 'class="active"' : ''}} href="/test?page={{$num}}"></a></li>
+              @if($isQueryPage)
+                <li><a {{($curr == $num) ? 'class="active"' : ''}} href="{{URL::current()}}?query={{$query}}&page={{$num}}"></a></li>
+              @else
+                <li><a {{($curr == $num) ? 'class="active"' : ''}} href="{{URL::current()}}?page={{$num}}"></a></li>
+              @endif
              @endforeach
           </ul>
         </div>

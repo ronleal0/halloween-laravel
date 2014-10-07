@@ -35,7 +35,7 @@ function dosearch() {
 	}
 	var word = escape(sf.query.value);
 	if(submitto === undefined){
-		submitto = '/q?query=' + word;
+		submitto = '/become/q?query=' + word;
 	}
 	console.log(submitto);
 	window.location.href = submitto;
