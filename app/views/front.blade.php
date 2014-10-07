@@ -56,7 +56,7 @@
               <div id="{{$filter->label}}" class="accordionContent content">
                  <ul>
                   @foreach($filter->{'dimension-class'} as $class)
-                  <li><a href="/q?query={{$class->label}}&fd={{$class['fdid']}}">{{$class->label}}</a></li>
+                  <li><a href="/become/q?query={{$query}}&fd={{$class['fdid']}}">{{$class->label}}</a></li>
                   @endforeach
                 </ul>
               </div>
