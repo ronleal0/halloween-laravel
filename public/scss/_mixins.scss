@@ -28,3 +28,35 @@
     height: $footer-height; 
   }
 }
+
+@mixin btn($btn-color) {
+  background-color: $btn-color;
+  background: -moz-linear-gradient(top, $btn-color 53%, $white 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(53%,$btn-color), color-stop(100%,$white));
+  background: -webkit-linear-gradient(top, $btn-color 53%,$white 100%);
+  background: -o-linear-gradient(top, $btn-color 53%,$white 100%);
+  background: -ms-linear-gradient(top, $btn-color 53%,$white 100%);
+  background: linear-gradient(to bottom, $btn-color 53%,$white 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$btn-color', endColorstr='$white',GradientType=0 );
+  
+  &:hover {
+    color:white;
+    border: 0.25em $dark-orange solid;
+    background: -moz-linear-gradient(top, $dark-orange 0%, $dark-orange 52%, $white 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$dark-orange), color-stop(52%,$dark-orange), color-stop(100%,$white));
+    background: -webkit-linear-gradient(top, $dark-orange 0%,$dark-orange 52%,$white 100%);
+    background: -o-linear-gradient(top, $dark-orange 0%,$dark-orange 52%,$white 100%);
+    background: -ms-linear-gradient(top, $dark-orange 0%,$dark-orange 52%,$white 100%);
+    background: linear-gradient(to bottom, $dark-orange 0%,$dark-orange 52%,$white 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$dark-orange', endColorstr='$white',GradientType=0 );
+  } 
+
+}
+
+
+@mixin trans($val...) {
+  -webkit-transition: $val;
+  -moz-transition: $val; 
+  -o-transition: $val; 
+  transition: $val; 
+}

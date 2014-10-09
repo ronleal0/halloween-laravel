@@ -66,10 +66,13 @@ class DecidoController extends BaseController{
 
 
 	public function data(){
-		$query = Input::get('query');
+		// $query = (Input::get('query'))? Input::get('query') : 'halloween';
+		$query = 'bag';
 		$fd = (Input::get('fd')!= '') ? Input::get('fd') : NULL;
 
 		$all = Toolbox::getresultswithfilterDecido($query, 196, $fd);
-		Toolbox::debug($all);
+		$products = $all->xpath('//product-results-module/product-results/product');
+
+		Toolbox::debug($products);
 	}
 }

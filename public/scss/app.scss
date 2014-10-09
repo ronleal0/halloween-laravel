@@ -150,16 +150,47 @@ body{
 		}
 	}
 }
-#searchButton{
-	background-color: $yellow!important;
-	padding:0;
-	&:hover{
-		background-color: darken($yellow,10%)!important;
+
+.btn {
+	margin:0;
+	padding: 2px 20%;
+	display: inline-block;
+	padding:0!important;
+	border-radius: 15px!important;
+	border: 0.25em $orange solid;
+	color: #FFF;
+	font-size: 18px;
+	font-family: 'Creepster', cursive;
+	text-align: center;	
+	line-height: 25px;
+	font-size:22px;
+	text: {
+		font-family: 'Creepster', cursive;
+		transform: uppercase;
+		decoration: none;
+		font-size: 18px;
 	}
-	&:focus{
-		background-color: darken($yellow,10%);
+  cursor:pointer;
+}
+
+
+.orange {
+	@include btn($orange);
+
+}
+
+.zum{
+	width:95%;
+	margin:0 auto;
+	display:block;
+	
+	span{
+		display:block;
+		padding:6px;
 	}
 }
+
+
 .logo{
 	a{
 		color:$yellow;
@@ -223,6 +254,27 @@ body{
 			display: block;
 			width:100%;
 		}
+	}
+}
+
+.shipping{
+	background:$pinkish;
+	padding:5%;
+	font-size:rem-calc(13);
+	color:$black;
+	margin-bottom:5%!important;
+	height: 105px;
+	.oldprice{
+		font-size: rem-calc(12);
+		color: lighten($black, 20%);
+		text-decoration: line-through;
+	}
+	.actualprice{
+		font-weight: bold;
+	}
+	.Total{
+		margin-top:5%;
+		border-top: 1px dashed $black;
 	}
 }
 .before{
@@ -331,10 +383,24 @@ body{
 	bottom: 0;
 	left: 0;
 	right:0;
-	background:orange;
+	background:$lightgray;
 	padding:5px;
+
 
 	p{
 		font-size: rem-calc(10);
+		color:darken($lightgray, 20%);
+		margin:0;
+	}
+}
+.introText{
+	padding:10px;
+	border-top:1px dashed $lightgray;
+	border-bottom:1px dashed $lightgray;
+	margin-bottom: 5px;
+	p{
+		margin:0;
+		font-size:rem-calc(13);
+		color:$black;
 	}
 }

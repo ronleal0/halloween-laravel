@@ -22,14 +22,13 @@
           </div>
           <div class="large-10 columns searchbox" onSubmit="return dosearchDecido();">
             <form name="searchform" method="get">
-                 <div class="large-7 large-centered columns">
-                    <div class="row collapse">
-                      <div class="small-10 columns">
+                 <div class="large-8 large-centered columns">
+                    <div class="row">
+                      <div class="small-9 columns">
                         <input style="margin:0" type="text" name="query" value="" placeholder="Suche nach Halloween-Artikel..." required>
                       </div>
-                      <div class="small-2 columns">
-                        <!-- <input id="searchButton" style="margin:0" type="submit" value="Suche" class="suchebutton"> -->
-                        <button id="searchButton" class="postfix"><span>Suche</span></button>
+                      <div class="small-3 columns">
+                        <input type="submit" value="Suche" class="orange btn postfix">
                       </div>
                     </div>
                   </div>
@@ -44,7 +43,13 @@
             </form> 
         </div>
         </div>
-   
+      
+      <div class="large-12 columns introText">
+        <p>
+          <strong>Halloween</strong> – das Fest der Gruselkönige und Kürbisgesichter! Vampire, Zombies, Monster und Hexen treiben ihr Unwesen. Tolle Deko-Ideen, schaurig-schöne Kostüme und furchterregende Masken – all das und noch viel mehr finden Sie hier im Preisvergleich. Stöbern Sie gleich los! So wird die Halloween-Party garantiert ein super Erfolg!
+        </p>
+      </div>
+
       @if($hasResult)
         <div class="large-2 columns sidebar">
           <dl class="accordion" data-accordion>
@@ -80,9 +85,6 @@
        @endif
       <!-- END OF SIDEBAR -->
       <div class="large-10 columns productPartDecido" data-equalizer >
-        <div class="large-12 columns">
-          <p>Results for {{$query}}</p>
-        </div>
           @if($hasResult)
             <?php 
               $page = new NewPagination();
@@ -94,7 +96,7 @@
              
               <div class="productbox large-3 columns" data-equalizer-watch>
                 <!-- MODAL -->
-                <div data-reveal id="offer{{$product['oid']}}" class="reveal-modal" >
+                <!--             <div data-reveal id="offer{{$product['oid']}}" class="reveal-modal" >
                   <div class="image" >
                     <img src="{{ $product->image[0]['source'] }}" alt="{{$product->label}}">
                     </div>
@@ -110,21 +112,33 @@
                     <p><a target="_blank" href="{{ $product->offer->url }}" class="secondary button">Zum Shop</a></p>
                   </div>
                   <a class="close-reveal-modal">&#215;</a>
-                </div>
+                </div> -->
 
                
                 <img src="{{ $product->image[0]['source'] }}" >
-
+               
                 <ul>
                   <li class="prodName"><a target="_blank" href="{{ $product->offer->url }}">{{$product->label}}</a></li>
-                  
-                    
-                  
-                  <li><a href="" data-reveal-id="offer{{$product['oid']}}" class="modal moreinfo">Mehr</a></li>
-                  <li class="price">{{ $product->offer->price }} € *</li>
+                  <li>
+                   <ul class="shipping">
+
+                    @if($product->offer->{'price-info'}[1])
+                      <li class="oldprice">{{$product->offer->{'price-info'}[0]}}</li>
+                    @endif
+                    <li class="actualprice">{{ $product->offer->price }} € *</li>
+                    @if(isset($product->offer->delivery->charge))
+                    <li class="shippingPrice">Versand ab {{$product->offer->delivery->charge }}</li>
+                    @endif
+                    @if($product->offer->{'price-info'}[1])
+                    <li class="Total">Gesamt {{ $product->offer->{'price-info'}[1] }} €</li>
+                    @else
+                    <li class="Total">Gesamt {{ $product->offer->{'price-info'} }} €</li>
+                    @endif
+                  </ul>
+                  </li>
                   <li class="seller"> @if($product['nr-of-merchants'] != 0){{ $product->offer->merchant->label }}@endif</li>
                 </ul>
-                <a target="_blank" href="{{ $product->offer->url }}" class="secondary button">Zum Shop</a>
+                <a target="_blank" href="{{ $product->offer->url }}" class="orange btn zum"><span>Zum Shop</span></a>
               </div>
               
             @endforeach
