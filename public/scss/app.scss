@@ -102,7 +102,7 @@ body{
 				border-bottom:1px dashed #ddd;
 				color:$black;
 				line-height: 15px;
-				text-transform:lowercase;
+				text-transform:capitalize;
 				&:hover{
 					background:$lightgray;
 				}

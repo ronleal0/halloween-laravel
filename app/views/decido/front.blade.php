@@ -34,10 +34,10 @@
                   </div>
                   <div class="large-7 large-centered columns">
                     <div class="large-6 columns">
-                      <input type="radio" name="siteSearch" value="decido/q?query=" id="forthis"><label for="forthis">Search this page</label>
+                      <input type="radio" name="siteSearch" value="decido/q?query=" id="forthis"><label for="forthis">Halloween Suche</label>
                     </div>
                     <div class="large-6 columns">
-                      <input type="radio" name="siteSearch" value="http://www.decido.de/suche?qry=" id="forthat"><label for="forthat">Search Decido.de</label>
+                      <input type="radio" name="siteSearch" value="http://www.decido.de/suche?qry=" id="forthat"><label for="forthat">Preisvergleich Suche</label>
                     </div>
                   </div>
             </form> 
@@ -54,7 +54,7 @@
         <div class="large-2 columns sidebar">
           <dl class="accordion" data-accordion>
             <dd class="accordion-navigation">
-              <a href="#panel1" class="accordionTitle">Suggested Products</a>
+              <a href="#panel1" class="accordionTitle">Empfohlene Produkte</a>
               <div id="panel1" class="accordionContent active content">
                  <ul>
                  @foreach($popularProducts as $popProds)
@@ -77,9 +77,7 @@
               </div>
               </dd>
             @endforeach
-            <dd class="accordion-navigation">
-              <a target="_blank" href="http://www.decido.de/impressum.html" class="accordionTitle">Impressum</a>
-            </dd>
+           
           </dl>
         </div>
        @endif
@@ -136,7 +134,7 @@
                     @endif
                   </ul>
                   </li>
-                  <li class="seller"> @if($product['nr-of-merchants'] != 0){{ $product->offer->merchant->label }}@endif</li>
+                  <li class="seller"> @if($product['nr-of-merchants'] != 0){{ str_limit($product->offer->merchant->label, 30) }}@endif</li>
                 </ul>
                 <a target="_blank" href="{{ $product->offer->url }}" class="orange btn zum"><span>Zum Shop</span></a>
               </div>
@@ -177,6 +175,9 @@
     <div class="row stickyfooter">
       <p>
         *Alle Preise verstehen sich inklusive der gesetzlichen Mehrwertsteuer und ggf. zuzüglich Versandkosten. Die Angebotsinformationen basieren auf den Angaben des jeweiligen Händlers und werden über automatisierte Prozesse aktualisiert. Wir sind um eine handelsüblich angemessene Richtigkeit der Produkt- und Preisangaben bemüht, es kann jedoch möglich sein, dass sich einzelne Preise und/oder Versandkosten in den jeweiligen Shops erhöht haben. Ausschlaggebend ist der beim jeweiligen Webshop angegebene Preis. Leider ist eine Echtzeit-Aktualisierung der Preise technisch nicht möglich.
+      </p>
+      <p>
+        <a target="_blank" href="http://www.decido.de/impressum.html" >Impressum</a>
       </p>
     </div>
     @stop
