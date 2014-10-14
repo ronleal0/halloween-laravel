@@ -3,11 +3,14 @@
  ?>  
 
 @extends('layout.master')
-    @section('angular')
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-      <script src="/js/myangular.js"></script>
-    @stop
 @section('content')
+    <div class="outer">
+    <div class="row header">
+      <div class="large-12 columns ">
+        <h1 class="logo"><a href="/">Halloween</a></h1>
+      </div>
+    </div>
+    </div>
     <div class="outerMain">
       <div class="row main">
       <div class="large-12 columns searchbox" >
@@ -33,7 +36,7 @@
           </form> 
       </div>
        @if($hasResult)
-        <div class="large-2 columns sidebar" ng-controller="sideController">
+        <div class="large-2 columns sidebar">
           <dl class="accordion" data-accordion>
             <dd class="accordion-navigation">
               <a href="#panel1" class="accordionTitle">Suggested Products</a>
@@ -47,38 +50,18 @@
                </ul>
               </div>
             </dd>
-            <dd class="accordion-navigation">
-              <a href="#panel1" class="accordionTitle">Popular Categories</a>
-              <div id="panel1" class="accordionContent active content">
+            @foreach($filters as $filter)
+              <dd class="accordion-navigation">
+              <a href="#{{$filter->label}}" class="accordionTitle">{{$filter->label}}</a>
+              <div id="{{$filter->label}}" class="accordionContent content">
                  <ul>
-                   <li ng-repeat="cats in categories">
-                    <a href="/become/static?cat=@{{cats.parameter}}">@{{ cats.name }}</a>
-                   </li>
-               </ul>
+                  @foreach($filter->{'dimension-class'} as $class)
+                  <li><a href="/become/q?query={{$query}}&fd={{$class['fdid']}}">{{$class->label}}</a></li>
+                  @endforeach
+                </ul>
               </div>
-            </dd>
-             <dd class="accordion-navigation">
-              <a href="#panel1" class="accordionTitle">Popular Merchants</a>
-              <div id="panel1" class="accordionContent active content">
-                 <ul>
-                   <li ng-repeat="merchant in merchants">
-                    <a href="/become/static?mer=@{{merchant.parameter}}">@{{ merchant.name }}</a>
-                   </li>
-               </ul>
-              </div>
-            </dd>
-          <!--   @foreach($filters as $filter)
-            <dd class="accordion-navigation">
-            <a href="#{{$filter->label}}" class="accordionTitle">{{$filter->label}}</a>
-            <div id="{{$filter->label}}" class="accordionContent content">
-               <ul>
-                @foreach($filter->{'dimension-class'} as $class)
-                <li><a href="/become/q?query={{$query}}&fd={{$class['fdid']}}">{{$class->label}}</a></li>
-                @endforeach
-              </ul>
-            </div>
-            </dd>
-          @endforeach -->
+              </dd>
+            @endforeach
           </dl>
         </div>
        @endif
@@ -162,3 +145,4 @@
         </div>
     @endif
     @stop
+

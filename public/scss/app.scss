@@ -192,6 +192,9 @@ body{
 
 
 .logo{
+	img{
+		display:block;
+	}
 	a{
 		color:$yellow;
 	}
@@ -368,7 +371,9 @@ body{
 		}
 	}
 }
-
+.activelang{
+	background:$lightgray;
+}
 .active{
 	font-weight:bold;
 	color: $yellow;

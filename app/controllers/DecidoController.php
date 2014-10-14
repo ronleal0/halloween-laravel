@@ -73,6 +73,6 @@ class DecidoController extends BaseController{
 		$all = Toolbox::getresultswithfilterDecido($query, 196, $fd);
 		$products = $all->xpath('//product-results-module/product-results/product');
 
-		Toolbox::debug($products);
+		return $products;
 	}
 }

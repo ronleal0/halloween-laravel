@@ -31,6 +31,9 @@ Route::get('/decido', 'DecidoController@home');
 Route::get('/decido/q', 'DecidoController@query');
 Route::get('/decido/data', 'DecidoController@data');
 
-Route::get('/become/query', function(){
-	echo URL::current();
+Route::get('/become/static', function(){
+	$merchant = (Input::get('mer')) ? Input::get('mer') : '';
+	$json = (Input::get('cat')) ? Input::get('cat') : '';
+	return View::make('angular')->with('json',$json)
+	->with('merchant', $merchant);
 });
