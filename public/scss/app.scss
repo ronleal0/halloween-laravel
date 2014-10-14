@@ -40,7 +40,9 @@
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
 
-
+[ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none;
+}
 * {
 	// background: #ccc;
 	// border: 1px solid #333;

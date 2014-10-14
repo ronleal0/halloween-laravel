@@ -36,7 +36,7 @@
               <div id="panel1" class="accordionContent active content">
                  <ul>
 	                 <li ng-repeat="cats in categories">
-	                  <a href="/become/static?cat=@{{cats.parameter}}">@{{ cats.name }}</a>
+	                  <a href="/become/static?cat=@{{cats.parameter}}" ng-cloak>@{{ cats.name }}</a>
 	                 </li>
                </ul>
               </div>
@@ -46,7 +46,7 @@
               <div id="panel1" class="accordionContent active content">
                  <ul>
                    <li ng-repeat="merchant in merchants">
-                    <a href="/become/static?mer=@{{merchant.parameter}}">@{{ merchant.name }}</a>
+                    <a href="/become/static?mer=@{{merchant.parameter}}" ng-cloak>@{{ merchant.name }}</a>
                    </li>
                </ul>
               </div>
