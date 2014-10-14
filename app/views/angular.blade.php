@@ -62,12 +62,12 @@
                 <img ng-src="@{{ product.ImageLink }}" >
 
                 <ul>
-                  <li class="prodName"><a href="@{{ product.MerchantAddress }}">@{{ product.ProductName }}</a></li>
-                  <li class="price">
+                  <li class="prodName" ng-cloak><a href="@{{ product.MerchantAddress }}">@{{ product.ProductName }}</a></li>
+                  <li class="price" ng-cloak>
                   
                     @{{ product.Price }}
                   </li>
-                   <li class="seller">@{{ product.Merchant }}</li>
+                   <li class="seller" ng-cloak>@{{ product.Merchant }}</li>
                 </ul>
                 <a target="_blank" href="@{{ product.MerchantAddress }}" class="secondary button">See it</a>
               </div>
