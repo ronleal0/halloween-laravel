@@ -8,6 +8,15 @@
       <script src="/js/myangular.js"></script>
     @stop
 @section('content')
+    <div class="outer">
+    <div class="row header">
+      <div class="large-12 columns ">
+        <h1 class="logo">
+          <img src="http://proxy.become.com/resource/portals/become/static/images/us/logo.png" alt="">
+          <a href="/">Halloween</a></h1>
+      </div>
+    </div>
+    </div>
     <div class="outerMain">
       <div class="row main">
       <div class="large-12 columns searchbox" >
@@ -41,7 +50,11 @@
                  <ul>
                  @foreach($popularProducts as $popProds)
                  <li>
+                  @if($gclid != false)
+                  <a target="_blank" href="{{$popProds->offer->url}}&gclid={{ $gclid }}">{{$popProds->label}}</a>
+                  @else
                   <a target="_blank" href="{{$popProds->offer->url}}">{{$popProds->label}}</a>
+                  @endif
                  </li>
                  @endforeach
                </ul>
@@ -108,7 +121,13 @@
                       <li class="price">${{ $product->offer->price }}</li>
                        <li class="seller"> @if($product['nr-of-merchants'] != 0){{ $product->offer->merchant->label }}@endif</li>
                     </ul>
-                    <p><a target="_blank" href="{{ $product->offer->url }}" class="secondary button">See Product</a></p>
+                    <p>
+                      @if($gclid != false)
+                      <a target="_blank" href="{{ $product->offer->url }}&gclid={{ $gclid }}" class="secondary button">See Product</a>
+                      @else
+                      <a target="_blank" href="{{ $product->offer->url }}" class="secondary button">See Product</a>
+                      @endif
+                    </p>
                   </div>
                   <a class="close-reveal-modal">&#215;</a>
                 </div>
@@ -117,7 +136,13 @@
                 <img src="{{ $product->image[0]['source'] }}" >
 
                 <ul>
-                  <li class="prodName"><a target="_blank" href="{{ $product->offer->url }}">{{$product->label}}</a></li>
+                  <li class="prodName">
+                    @if( $gclid != false)
+                    <a target="_blank" href="{{ $product->offer->url }}&gclid={{$gclid}}">{{$product->label}}</a>
+                    @else
+                    <a target="_blank" href="{{ $product->offer->url }}">{{$product->label}}</a>
+                    @endif
+                  </li>
                   
                     <p class="pitch">@if($product->offer->pitch){{ $product->offer->pitch }}@endif</p>
                   <li><a href="" data-reveal-id="offer{{$product['oid']}}" class="modal moreinfo">more info</a></li>
@@ -127,7 +152,11 @@
                   </li>
                    <li class="seller"> @if($product['nr-of-merchants'] != 0){{ $product->offer->merchant->label }}@endif</li>
                 </ul>
+                @if($gclid != false)
+                <a target="_blank" href="{{ $product->offer->url }}&gclid={{ $gclid }}" class="secondary button">See it</a>
+                @else
                 <a target="_blank" href="{{ $product->offer->url }}" class="secondary button">See it</a>
+                @endif
               </div>
 
               @endforeach

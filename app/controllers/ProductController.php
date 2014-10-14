@@ -5,6 +5,7 @@ class ProductController extends BaseController{
 
 
 	public function home(){
+		$gclid = (Input::get('gclid')) ? Input::get('gclid') : false;
 		$defaultQuery = 'halloween';
 		$fd = (Input::get('mid')!= '') ? Input::get('mid') : '';
 		$all = Toolbox::getresultswithfilter($defaultQuery, 196, $fd);	
@@ -21,13 +22,16 @@ class ProductController extends BaseController{
 			->with('popularProducts', $popularProducts)
 			->with('filters', $filters)
 			->with('merchants',$merchant)
-			->with('isQueryPage', false);
+			->with('isQueryPage', false)
+			->with('gclid', $gclid);
 		}else{
 			return View::make('front')->with('hasResult', false)->with('query', $defaultQuery);
 		}
 	} 
 	public function query(){
+		
 		$query = Input::get('query');
+		$gclid = (Input::get('gclid')) ? Input::get('gclid') : false;
 		$fd = (Input::get('fd')!= '') ? Input::get('fd') : NULL;
 
 		$all = Toolbox::getresultswithfilter($query, 196, $fd);
@@ -42,7 +46,8 @@ class ProductController extends BaseController{
 			->with('popularProducts', $popularProducts)
 			->with('filters', $filters)
 			->with('merchants',$merchant)
-			->with('isQueryPage', true);
+			->with('isQueryPage', true)
+			->with('gclid', $gclid);
 		}else{
 			return View::make('front')->with('hasResult', false)->with('query', $query);
 		}

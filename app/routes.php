@@ -32,8 +32,10 @@ Route::get('/decido/q', 'DecidoController@query');
 Route::get('/decido/data', 'DecidoController@data');
 
 Route::get('/become/static', function(){
+	$gclid = (Input::get('gclid')) ? Input::get('gclid') : false;
 	$merchant = (Input::get('mer')) ? Input::get('mer') : '';
 	$json = (Input::get('cat')) ? Input::get('cat') : '';
 	return View::make('angular')->with('json',$json)
-	->with('merchant', $merchant);
+	->with('merchant', $merchant)
+	->with('gclid', $gclid);
 });

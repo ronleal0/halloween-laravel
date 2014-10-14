@@ -53,20 +53,21 @@
       @if($hasResult)
         <div class="large-2 columns sidebar">
           <dl class="accordion" data-accordion>
-            <dd class="accordion-navigation">
+            <!-- <dd class="accordion-navigation">
               <a href="#panel1" class="accordionTitle">Empfohlene Produkte</a>
               <div id="panel1" class="accordionContent active content">
                  <ul>
                  @foreach($popularProducts as $popProds)
                  <li>
+                  
                   <a class="suggested" target="_blank" href="{{$popProds->offer->url}}">{{$popProds->label}}</a>
                  </li>
                  @endforeach
                </ul>
               </div>
-            </dd>
+            </dd> -->
             @foreach($filters as $filter)
-              <dd class="accordion-navigation">
+              <dd class="accordion-navigation" >
               <a href="#{{$filter->label}}" class="accordionTitle">{{$filter->label}}</a>
               <div id="{{$filter->label}}" class="accordionContent content">
                  <ul>
@@ -116,7 +117,13 @@
                 <img src="{{ $product->image[0]['source'] }}" >
                
                 <ul>
-                  <li class="prodName"><a target="_blank" href="{{ $product->offer->url }}">{{$product->label}}</a></li>
+                  <li class="prodName">
+                    @if($gclid != false)
+                    <a target="_blank" href="{{ $product->offer->url }}&gclid={{$gclid}}">{{$product->label}}</a>
+                    @else
+                    <a target="_blank" href="{{ $product->offer->url }}">{{$product->label}}</a>
+                    @endif
+                  </li>
                   <li>
                    <ul class="shipping">
 
@@ -136,7 +143,11 @@
                   </li>
                   <li class="seller"> @if($product['nr-of-merchants'] != 0){{ str_limit($product->offer->merchant->label, 30) }}@endif</li>
                 </ul>
+                @if($gclid != false)
+                <a target="_blank" href="{{ $product->offer->url }}&gclid={{$gclid}}" class="orange btn zum"><span>Zum Shop</span></a>
+                @else
                 <a target="_blank" href="{{ $product->offer->url }}" class="orange btn zum"><span>Zum Shop</span></a>
+                @endif
               </div>
               
             @endforeach

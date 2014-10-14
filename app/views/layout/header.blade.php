@@ -14,12 +14,3 @@
 	}
   </script>
 <body>
-    <div class="outer">
-    <div class="row header">
-      <div class="large-12 columns ">
-        <h1 class="logo">
-          <img src="http://proxy.become.com/resource/portals/become/static/images/us/logo.png" alt="">
-          <a href="/">Halloween</a></h1>
-      </div>
-    </div>
-    </div>

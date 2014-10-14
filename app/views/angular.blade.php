@@ -4,7 +4,15 @@
 
 @extends('layout.angularMaster')
 @section('content')
-
+      <div class="outer">
+    <div class="row header">
+      <div class="large-12 columns ">
+        <h1 class="logo">
+          <img src="http://proxy.become.com/resource/portals/become/static/images/us/logo.png" alt="">
+          <a href="/">Halloween</a></h1>
+      </div>
+    </div>
+    </div>
     <div class="outerMain">
       <div class="row main">
       <div class="large-12 columns searchbox" >
@@ -62,14 +70,25 @@
                 <img ng-src="@{{ product.ImageLink }}" >
 
                 <ul>
-                  <li class="prodName" ng-cloak><a href="@{{ product.MerchantAddress }}">@{{ product.ProductName }}</a></li>
-                  <li class="price" ng-cloak>
+                  <li class="prodName">
+                    @if($gclid != false)
+                        <a href="@{{ product.MerchantAddress }}&gclid={{ $gclid }}">@{{ product.ProductName }}</a>
+                    @else
+                        <a href="@{{ product.MerchantAddress }}">@{{ product.ProductName }}</a>
+                    @endif
+                  </li>
+                  <li class="price">
                   
                     @{{ product.Price }}
                   </li>
-                   <li class="seller" ng-cloak>@{{ product.Merchant }}</li>
+                   <li class="seller" ng-product>@{{ cloak.Merchant }}</li>
                 </ul>
-                <a target="_blank" href="@{{ product.MerchantAddress }}" class="secondary button">See it</a>
+                 @if($gclid != false)
+                        <a target="_blank" href="@{{ product.MerchantAddress }}&gclid={{ $gclid }}" class="secondary button">See it</a>
+                    @else
+                        <a target="_blank" href="@{{ product.MerchantAddress }}" class="secondary button">See it</a>
+                    @endif
+                
               </div>
       </div>
       <!-- End of productPart -->
