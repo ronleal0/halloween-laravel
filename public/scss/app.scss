@@ -261,14 +261,21 @@ body{
 		}
 	}
 }
-
+.deliveryPeriod{
+	position:absolute;
+	bottom:3%;
+	font-size:11px;
+	color: #6c716f;
+	line-height:14px;
+}
 .shipping{
 	background:$pinkish;
 	padding:5%;
 	font-size:rem-calc(13);
 	color:$black;
 	margin-bottom:5%!important;
-	height: 105px;
+	height: 125px;
+	position:relative;
 	.oldprice{
 		font-size: rem-calc(12);
 		color: lighten($black, 20%);

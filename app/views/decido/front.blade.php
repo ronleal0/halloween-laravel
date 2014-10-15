@@ -139,6 +139,7 @@
                     @else
                     <li class="Total">Gesamt {{ $product->offer->{'price-info'} }} €</li>
                     @endif
+                    @if($product->offer->delivery->period) <li class="deliveryPeriod">{{ $product->offer->delivery->period }}</li>@endif
                   </ul>
                   </li>
                   <li class="seller"> @if($product['nr-of-merchants'] != 0){{ str_limit($product->offer->merchant->label, 30) }}@endif</li>
