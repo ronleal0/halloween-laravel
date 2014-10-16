@@ -43,9 +43,9 @@
       </div>
        @if($hasResult)
         <div class="large-2 columns sidebar" ng-controller="sideController">
-          <section class="titleSuggested large-12 column">
+            <section class="titleSuggested large-12 column">
                 <p>SUGGESTED PRODUCTS</p>
-              </section>
+            </section>
             <div id="carouselMain" class="large-12 columns owl-carousel">
               
                 @foreach($popularProducts as $popProds)
@@ -54,9 +54,9 @@
                   
                     <span class="details">
                       @if($gclid != false)
-                      <a target="_blank" href="{{$popProds->offer->url}}&gclid={{ $gclid }}">{{ str_limit($popProds->label, 50) }}</a>
+                      <a target="_blank" href="{{$popProds->offer->url}}&gclid={{ $gclid }}">{{ Str::words($popProds->label, 3) }}</a>
                       @else
-                      <a target="_blank" href="{{$popProds->offer->url}}">{{str_limit($popProds->label, 50) }}</a>
+                      <a target="_blank" href="{{$popProds->offer->url}}">{{Str::words($popProds->label, 3) }}</a>
                       @endif
                     </span>
                    
