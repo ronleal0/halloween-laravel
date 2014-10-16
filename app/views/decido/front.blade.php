@@ -52,6 +52,28 @@
 
       @if($hasResult)
         <div class="large-2 columns sidebar">
+          <section class="titleSuggested large-12 column">
+                <p>Empfohlene Produkte</p>
+            </section>
+          <div id="carouselMain" class="large-12 columns owl-carousel">
+              
+                @foreach($popularProducts as $popProds)
+                  <div class="eachslide">
+                    <img class="lazyOwl" data-src="{{ str_replace("/B_","/D_", $popProds->image[0]['source']) }}" alt="">
+                  
+                    <span class="details">
+                      @if($gclid != false)
+                      <a target="_blank" href="{{$popProds->offer->url}}&gclid={{ $gclid }}">{{ str_limit($popProds->label, 50) }}</a>
+                      @else
+                      <a target="_blank" href="{{$popProds->offer->url}}">{{str_limit($popProds->label, 50) }}</a>
+                      @endif
+                    </span>
+                   
+
+                  </div>
+                 @endforeach
+            </div>
+
           <dl class="accordion" data-accordion>
             <!-- <dd class="accordion-navigation">
               <a href="#panel1" class="accordionTitle">Empfohlene Produkte</a>
@@ -90,24 +112,7 @@
               $pageNumbers = $page->paginate($products, 20);
               $products = $page->fetchResults();
             ?>
-            <div id="carouselMain" class="large-12 columns owl-carousel">
-              
-                @foreach($popularProducts as $popProds)
-                  <div class="eachslide">
-                    <img class="lazyOwl" data-src="{{ str_replace("/B_","/D_", $popProds->image[0]['source']) }}" alt="">
-                  
-                    <span class="details">
-                      @if($gclid != false)
-                      <a target="_blank" href="{{$popProds->offer->url}}&gclid={{ $gclid }}">{{ str_limit($popProds->label, 50) }}</a>
-                      @else
-                      <a target="_blank" href="{{$popProds->offer->url}}">{{str_limit($popProds->label, 50) }}</a>
-                      @endif
-                    </span>
-                   
 
-                  </div>
-                 @endforeach
-            </div>
             @foreach($products as $product)
              
               <div class="productbox large-3 columns" data-equalizer-watch>
