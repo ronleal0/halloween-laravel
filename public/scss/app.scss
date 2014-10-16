@@ -2,6 +2,9 @@
 @import "foundation";
 @import "colors";
 @import "mixins";
+@import "owltheme";
+@import "owlcarousel";
+
 // Or selectively include components
 // @import
 //   "foundation/components/accordion",
@@ -40,6 +43,38 @@
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
 
+#carouselMain{
+	border: 1px solid $lightgray;
+	margin-bottom: 1em;
+	padding:.7em;
+
+	.eachslide{
+		border:1px dashed #ddd;
+		padding: .5em;
+		margin:5px;
+
+		img{
+			display: block;
+			margin: 0 auto;
+		}
+
+
+	}
+}
+.titleSuggested{
+	p{
+		margin:0;
+		font-weight:bold;
+	}
+}
+.details{
+
+	a{
+		font-size: 12px;
+		line-height: 15px;
+		display: block;
+	}
+}
 [ng\:cloak], [ng-cloak], .ng-cloak {
     display: none;
 }
@@ -101,7 +136,6 @@ body{
 				display:block;
 				font-size: rem-calc(12);
 				padding: 8px 5px;
-				border-bottom:1px dashed #ddd;
 				color:$black;
 				line-height: 15px;
 				text-transform:capitalize;
@@ -209,7 +243,8 @@ body{
 }
 .main{
 	padding-top: 1em;
-	padding-bottom: 1em;	
+	padding-bottom: 1em;
+	position: relative;	
 }
 .productPart{
 	.productbox{
@@ -332,8 +367,25 @@ body{
 	font-size: 11px;
 	color: #69B107;
 }
-
-
+.loaderCover{
+	background: rgb(249,249,249);
+	position: absolute;
+	height: 50%;
+	width: 100%;
+	z-index: 1;
+}
+.loader {
+	left: 0px;
+	top: 0px;
+	width: 30%;
+	height: 15%;
+	z-index: 9999;
+	background: url("../img/page-loader.gif") 50% 50% no-repeat;
+	margin: 0 auto;
+}
+#searchButton{
+	z-index: 0;
+}
 // FOOTER
 .outerfooter{
 	background-color: $yellow;

@@ -9,12 +9,13 @@
       <div class="large-12 columns ">
         <h1 class="logo">
           <img src="http://proxy.become.com/resource/portals/become/static/images/us/logo.png" alt="">
-          <a href="/">Halloween</a></h1>
+          <a href="/become">Halloween</a></h1>
       </div>
     </div>
     </div>
     <div class="outerMain">
       <div class="row main">
+
       <div class="large-12 columns searchbox" >
           <form name="searchform" method="get" onSubmit="return dosearch();">
                <div class="large-7 large-centered columns">
@@ -37,7 +38,10 @@
                 </div>
           </form> 
       </div>
-        <div class="large-2 columns sidebar" ng-controller="sideController">
+     <!--  <div class="loaderCover">
+        <div class="loader"></div>
+      </div> -->
+        <div ng-cloak class="large-2 columns sidebar" ng-controller="sideController">
           <dl class="accordion" data-accordion>
             <dd class="accordion-navigation">
               <a href="#panel1" class="accordionTitle">Browse Categories</a>
@@ -62,10 +66,11 @@
           </dl>
         </div>
       <!-- END OF SIDEBAR -->
+      
       <div class="large-10 columns productPart" data-equalizer ng-controller="appController">
-
-
-              <div class="productbox large-3 columns" data-equalizer-watch ng-repeat="product in products">
+              
+    
+              <div ng-cloak class="productbox large-3 columns" data-equalizer-watch ng-repeat="product in products">
               
                 <img ng-src="@{{ product.ImageLink }}" >
 
@@ -96,8 +101,14 @@
     </div>
     @stop
     @section('angular')
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
     @if($merchant != '')<script src="/js/json/{{$merchant}}.jsonp"></script>@endif
 		@if($json != '')<script src="/js/json/{{$json}}.jsonp"></script>@endif
 		<script src="/js/myangular.js"></script>
+    <script type="text/javascript">
+      $(window).load(function() {
+        $(".loaderCover").fadeOut("slow");
+      })
+      </script>
     @stop

@@ -62,13 +62,18 @@ class Toolbox {
 			return file_get_contents($url);
 	}
 
+	public static function getJSON($url){
+		$content = self::getContentCached($url);
+		$json = json_decode($content,true);
 
+		return $json;
+	}
 	public static function getXML($url) {
 		$content = self::getContentCached($url);
+		
 		$xml = simplexml_load_string(str_replace('xmlns=','ns=',$content));
 		return $xml;
 	}
-
 
 	public static function httpRequest($url) {
 		global $sistrix;
@@ -208,6 +213,16 @@ class Toolbox {
 		$xml = self::getXML($url);
 		// $products = $xml->xpath('//product-results-module/product-results');
 		return $xml;
+	}
+
+	public static function getResultingJSON($query, $pge=NULL, $mid='')
+	{
+		
+		$query = self::cleanQuery($query);
+		$addMid = ($mid != "") ? "&fd=$mid" : '';
+		$url = "http://ronaldoleal:x2w3oFQv@de.channel.become.eu/livexml/3.1/decido_sem-de.portal/query;product-results;result-filter;popular-merchants-module;popular-products/$query?mode=broadmatch&rtype=JSON&pge=$pge" . $addMid;
+		$json = self::getJSON($url);
+		return $json;
 	}
 }
 

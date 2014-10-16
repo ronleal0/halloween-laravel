@@ -1,5 +1,5 @@
 <?php 
-  include(app_path().'/libs/NewPagination.php');
+//  include(app_path().'/libs/NewPagination.php');
  ?>  
 
 @extends('layout.master')
@@ -13,7 +13,7 @@
       <div class="large-12 columns ">
         <h1 class="logo">
           <img src="http://proxy.become.com/resource/portals/become/static/images/us/logo.png" alt="">
-          <a href="/">Halloween</a></h1>
+          <a href="/become">Halloween</a></h1>
       </div>
     </div>
     </div>
@@ -41,14 +41,14 @@
                 </div>
           </form> 
       </div>
-       @if($hasResult)
+
         <div class="large-2 columns sidebar" ng-controller="sideController">
           <dl class="accordion" data-accordion>
             <dd class="accordion-navigation">
               <a href="#panel1" class="accordionTitle">Popular Categories</a>
               <div id="panel1" class="accordionContent active content">
                  <ul>
-                   <li ng-cloak ng-repeat="cats in categories">
+                   <li ng-repeat="cats in categories">
                     <a href="/become/static?cat=@{{cats.parameter}}">@{{ cats.name }}</a>
                    </li>
                </ul>
@@ -58,7 +58,7 @@
               <a href="#panel1" class="accordionTitle">Popular Merchants</a>
               <div id="panel1" class="accordionContent active content">
                  <ul>
-                   <li ng-cloak ng-repeat="merchant in merchants">
+                   <li ng-repeat="merchant in merchants">
                     <a href="/become/static?mer=@{{merchant.parameter}}">@{{ merchant.name }}</a>
                    </li>
                </ul>
@@ -66,9 +66,7 @@
             </dd>
           </dl>
         </div>
-       @endif
       <!-- END OF SIDEBAR -->
-      
       <div class="large-10 columns productPart" data-equalizer >
           @if($hasResult)
             <?php 
@@ -162,25 +160,25 @@
       <!-- End of productPart -->
     </div>
     </div>
-    @if($hasResult)
-      <div class="row">
-          <ul style="display:hidden" class="pagination">
-             @foreach($pageNumbers as $num)
-            <?php 
-            if(isset($_GET['page'])){
-              $curr = $_GET['page'];
-            }else{
-              $curr = '';
-            }
-
-             ?>
-              @if($isQueryPage)
-                <li><a {{($curr == $num) ? 'class="active"' : ''}} href="{{URL::current()}}?query={{$query}}&page={{$num}}"></a></li>
-              @else
-                <li><a {{($curr == $num) ? 'class="active"' : ''}} href="{{URL::current()}}?page={{$num}}"></a></li>
-              @endif
-             @endforeach
-          </ul>
-        </div>
-    @endif
+   <!--  @if($hasResult)
+     <div class="row">
+         <ul style="display:hidden" class="pagination">
+            @foreach($pageNumbers as $num)
+           <?php 
+          /* if(isset($_GET['page'])){
+             $curr = $_GET['page'];
+           }else{
+             $curr = '';
+           }*/
+   
+            ?>
+             @if($isQueryPage)
+               <li><a {{($curr == $num) ? 'class="active"' : ''}} href="{{URL::current()}}?query={{$query}}&page={{$num}}"></a></li>
+             @else
+               <li><a {{($curr == $num) ? 'class="active"' : ''}} href="{{URL::current()}}?page={{$num}}"></a></li>
+             @endif
+            @endforeach
+         </ul>
+       </div>
+   @endif -->
     @stop

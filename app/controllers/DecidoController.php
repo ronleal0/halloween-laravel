@@ -8,9 +8,9 @@ class DecidoController extends BaseController{
 		$gclid = (Input::get('gclid')) ? Input::get('gclid') : false;
 		$defaultQuery = 'halloween';
 		$fd = (Input::get('mid')!= '') ? Input::get('mid') : '';
-		$all = Toolbox::getresultswithfilterDecido($defaultQuery,196, $fd);	
+		$all = Toolbox::getresultswithfilterDecido($defaultQuery,100, $fd);	
 
-
+		
 		if($all){
 			$filters = $all->xpath('//result-filter-module/result-filter/filter-dimension');
 			$popularProducts = $all->xpath('//popular-products-module/popular-products/product');
@@ -35,7 +35,7 @@ class DecidoController extends BaseController{
 		$fd = (Input::get('fd')!= '') ? Input::get('fd') : NULL;
 		$gclid = (Input::get('gclid')) ? Input::get('gclid') : false;
 
-		$all = Toolbox::getresultswithfilterDecido($query, 196, $fd);
+		$all = Toolbox::getresultswithfilterDecido($query, 100, $fd);
 
 		// echo $all->{'product-results-module'}->{'product-results'}['total'];
 		if($all){

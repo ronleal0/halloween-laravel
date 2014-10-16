@@ -16,8 +16,8 @@ Route::get('/q','ProductController@query');	// Query page
 
 
 // testing 
-Route::get('/test', 'ProductController@home'); 
-Route::get('/data', 'ProductController@data'); // get the data for visualization
+Route::get('/', 'ProductController@jsonHome'); 
+Route::get('/become/data', 'ProductController@data'); // get the data for visualization
 
 
 
@@ -38,4 +38,14 @@ Route::get('/become/static', function(){
 	return View::make('angular')->with('json',$json)
 	->with('merchant', $merchant)
 	->with('gclid', $gclid);
+});
+
+
+Route::get('/ron', function(){
+	$query = 'bag';
+	$results = Toolbox::getResultingJSON($query,3);
+	$filter = $results['resultFilterModule']['resultFilter'][0]['filterDimension'][0]['dimensionClass'];
+	$products = $results['productResultsModule']['productResults']['product'];
+	$popular = $results['popularProductsModule']['popularProducts']['product'];
+	return $popular;
 });

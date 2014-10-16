@@ -69,7 +69,7 @@
             @foreach($filters as $filter)
               <dd class="accordion-navigation" >
               <a href="#{{$filter->label}}" class="accordionTitle">{{$filter->label}}</a>
-              <div id="{{$filter->label}}" class="accordionContent content">
+              <div id="{{$filter->label}}" class="accordionContent active content">
                  <ul>
                   @foreach($filter->{'dimension-class'} as $class)
                   <li><a href="/decido/q?query={{$query}}&fd={{$class['fdid']}}">{{$class->label}}</a></li>
@@ -90,7 +90,24 @@
               $pageNumbers = $page->paginate($products, 20);
               $products = $page->fetchResults();
             ?>
+            <div id="carouselMain" class="large-12 columns owl-carousel">
+              
+                @foreach($popularProducts as $popProds)
+                  <div class="eachslide">
+                    <img class="lazyOwl" data-src="{{ str_replace("/B_","/D_", $popProds->image[0]['source']) }}" alt="">
+                  
+                    <span class="details">
+                      @if($gclid != false)
+                      <a target="_blank" href="{{$popProds->offer->url}}&gclid={{ $gclid }}">{{ str_limit($popProds->label, 50) }}</a>
+                      @else
+                      <a target="_blank" href="{{$popProds->offer->url}}">{{str_limit($popProds->label, 50) }}</a>
+                      @endif
+                    </span>
+                   
 
+                  </div>
+                 @endforeach
+            </div>
             @foreach($products as $product)
              
               <div class="productbox large-3 columns" data-equalizer-watch>

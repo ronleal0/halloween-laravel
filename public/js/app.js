@@ -12,7 +12,12 @@ $(document).foundation({
  	 }
 });
 
-
+$('#carouselMain').owlCarousel({
+	items : 3,
+	navigation : true,
+	lazyLoad : true,
+	autoHeight : true
+});
 
 $('.productPart').infinitescroll({
  
