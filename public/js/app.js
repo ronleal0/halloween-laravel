@@ -13,7 +13,7 @@ $(document).foundation({
 });
 
 $('#carouselMain').owlCarousel({
-	items : 3,
+	items : 1,
 	navigation : true,
 	lazyLoad : true,
 	autoHeight : true,
