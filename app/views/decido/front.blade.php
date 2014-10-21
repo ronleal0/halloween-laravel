@@ -65,7 +65,7 @@
                       @if($gclid != false)
                       <a target="_blank" href="{{$popProds->offer->url}}&gclid={{ $gclid }}">{{ Str::words($popProds->label, 2) }}</a>
                       @else
-                      <a target="_blank" href="{{$popProds->offer->url}}">{{Str::words($popProds->label, 2) }}</a>
+                      <a target="_blank" href="{{$popProds->offer->url}}">{{ Str::words($popProds->label, 2) }}</a>
                       @endif
                     </span>
                    

@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5a1c5e943316719f569bce5abde19ba6",
+    "hash": "fbd2339da2285d78ee38e6f0ad529a5d",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -86,6 +86,48 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "time": "2014-01-17 12:21:18"
+        },
+        {
+            "name": "fideloper/proxy",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fideloper/TrustedProxy.git",
+                "reference": "5f70b1d152b51ad2dc88af96ad5581a34bb0cadc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fideloper/TrustedProxy/zipball/5f70b1d152b51ad2dc88af96ad5581a34bb0cadc",
+                "reference": "5f70b1d152b51ad2dc88af96ad5581a34bb0cadc",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~4",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Fideloper\\Proxy": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Fidao",
+                    "email": "fideloper@gmail.com"
+                }
+            ],
+            "description": "Set trusted proxies for Laravel",
+            "keywords": [
+                "load balancing",
+                "proxy",
+                "trusted proxy"
+            ],
+            "time": "2014-08-11 13:02:57"
         },
         {
             "name": "filp/whoops",
@@ -1688,7 +1730,8 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
-        "peekmo/jsonpath": 20
+        "peekmo/jsonpath": 20,
+        "fideloper/proxy": 20
     },
     "prefer-stable": false,
     "platform": [
