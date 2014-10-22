@@ -3,6 +3,7 @@
 
  ?>  
 
+
 @extends('layout.master')
 @section('content')
 <link href='http://fonts.googleapis.com/css?family=Creepster' rel='stylesheet' type='text/css'>
@@ -18,7 +19,7 @@
         <div class="large-12 columns">
           <div class="large-2 columns decidologo">
             <p>Powered by:</p>
-            <img src="/img/decido-logo.png" alt="">
+            <img src="http://static.become.com/img/decido-logo.png" alt="">
           </div>
           <div class="large-10 columns searchbox" onSubmit="return dosearchDecido();">
             <form name="searchform" method="get">
