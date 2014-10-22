@@ -19,7 +19,7 @@
     </div>
     <div class="outerMain">
       <div class="row main">
-        {{URL::current}}
+        {{URL::current()}}
       <div class="large-12 columns searchbox" >
           <form name="searchform" method="get" onSubmit="return dosearch();">
                <div class="large-7 large-centered columns">
