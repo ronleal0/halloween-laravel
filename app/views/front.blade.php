@@ -5,7 +5,7 @@
 @extends('layout.master')
     @section('angular')
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-      <script src="/js/myangular.js"></script>
+      <script src="http://static.become.com/js/myangular.js"></script>
     @stop
 @section('content')
     <div class="outer">

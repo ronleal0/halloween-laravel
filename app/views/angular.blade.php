@@ -101,11 +101,11 @@
     </div>
     @stop
     @section('angular')
-    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="http://static.become.com/bower_components/jquery/dist/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-    @if($merchant != '')<script src="/js/json/{{$merchant}}.jsonp"></script>@endif
-		@if($json != '')<script src="/js/json/{{$json}}.jsonp"></script>@endif
-		<script src="/js/myangular.js"></script>
+    @if($merchant != '')<script src="http://static.become.com/js/json/{{$merchant}}.jsonp"></script>@endif
+		@if($json != '')<script src="http://static.become.com/js/json/{{$json}}.jsonp"></script>@endif
+		<script src="http://static.become.com/js/myangular.js"></script>
     <script type="text/javascript">
       $(window).load(function() {
         $(".loaderCover").fadeOut("slow");
