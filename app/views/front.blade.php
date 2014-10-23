@@ -19,7 +19,6 @@
     </div>
     <div class="outerMain">
       <div class="row main">
-        {{URL::current()}}
       <div class="large-12 columns searchbox" >
           <form name="searchform" method="get" onSubmit="return dosearch();">
                <div class="large-7 large-centered columns">
@@ -81,7 +80,7 @@
               <div id="panel1" class="accordionContent active content">
                  <ul>
                    <li ng-cloak ng-repeat="merchant in merchants">
-                    <a href="/become/static?mer=@{{merchant.parameter}}">@{{ merchant.name }}</a>
+                    <a href="/halloween/static?mer=@{{merchant.parameter}}">@{{ merchant.name }}</a>
                    </li>
                </ul>
               </div>
@@ -187,3 +186,4 @@
         </div>
     @endif
     @stop
+

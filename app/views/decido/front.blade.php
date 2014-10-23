@@ -16,7 +16,6 @@
     </div>
     <div class="outerMain">
       <div class="row main">
-        {{URL::current()}}
         <div class="large-12 columns">
           <div class="large-2 columns decidologo">
             <p>Powered by:</p>
@@ -90,10 +89,11 @@
                </ul>
               </div>
             </dd> -->
+            <?php $counter = 0 ?>
             @foreach($filters as $filter)
               <dd class="accordion-navigation" >
               <a href="#{{$filter->label}}" class="accordionTitle">{{$filter->label}}</a>
-              <div id="{{$filter->label}}" class="accordionContent active content">
+              <div id="{{$filter->label}}" class="accordionContentf content">
                  <ul>
                   @foreach($filter->{'dimension-class'} as $class)
                   <li><a href="/decido/q?query={{$query}}&fd={{$class['fdid']}}">{{$class->label}}</a></li>
@@ -200,9 +200,9 @@
 
              ?>
              @if($isQueryPage)
-            <li><a {{($curr == $num) ? 'class="active"' : ''}} href="{{URL::current()}}/?query={{$query}}&page={{$num}}">Page {{$num}}</a></li>
+            <li><a {{($curr == $num) ? 'class="active"' : ''}} href="http://www.decido.de/halloween/?query={{$query}}&page={{$num}}">Page {{$num}}</a></li>
             @else
-            <li><a {{($curr == $num) ? 'class="active"' : ''}} href="{{URL::current()}}/?page={{$num}}">Page {{$num}}</a></li>
+            <li><a {{($curr == $num) ? 'class="active"' : ''}} href="http://www.decido.de/halloween/?page={{$num}}">Page {{$num}}</a></li>
             @endif
              @endforeach
           </ul>
