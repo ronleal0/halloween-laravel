@@ -59,7 +59,7 @@ function dosearch() {
 	}
 	var word = escape(sf.query.value);
 	if(submitto === undefined){
-		submitto = '/become/q?query=' + word;
+		submitto = '/halloween/q?query=' + word;
 	}
 	console.log(submitto);
 	window.location.href = submitto;
@@ -74,7 +74,7 @@ function dosearchDecido() {
 	}
 	var word = escape(sf.query.value);
 	if(submitto === undefined){
-		submitto = '/decido/q?query=' + word;
+		submitto = '/halloween/q?query=' + word;
 	}
 	console.log(submitto);
 	window.location.href = submitto;
