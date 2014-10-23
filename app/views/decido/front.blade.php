@@ -35,7 +35,7 @@
                   </div>
                   <div class="large-7 large-centered columns">
                     <div class="large-6 columns">
-                      <input type="radio" name="siteSearch" value="decido/q?query=" id="forthis"><label for="forthis">Halloween Suche</label>
+                      <input type="radio" name="siteSearch" value="halloween/q?query=" id="forthis"><label for="forthis">Halloween Suche</label>
                     </div>
                     <div class="large-6 columns">
                       <input type="radio" name="siteSearch" value="http://www.decido.de/suche?qry=" id="forthat"><label for="forthat">Preisvergleich Suche</label>
