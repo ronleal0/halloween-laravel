@@ -93,7 +93,7 @@
             @foreach($filters as $filter)
               <dd class="accordion-navigation" >
               <a href="#{{$filter->label}}" class="accordionTitle">{{$filter->label}}</a>
-              <div id="{{$filter->label}}" class="accordionContentf content">
+              <div id="{{$filter->label}}" class="accordionContent content">
                  <ul>
                   @foreach($filter->{'dimension-class'} as $class)
                   <li><a href="/halloween/q?query={{$query}}&fd={{$class['fdid']}}">{{$class->label}}</a></li>
