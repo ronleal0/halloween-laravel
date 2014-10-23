@@ -30,7 +30,7 @@ class ProductController extends BaseController{
 	} 
 	public function query(){
 		
-		$query = Input::get('query');
+		$query = Toolbox::cleanQuery(Input::get('query'));
 		$gclid = (Input::get('gclid')) ? Input::get('gclid') : false;
 		$fd = (Input::get('fd')!= '') ? Input::get('fd') : NULL;
 

@@ -31,7 +31,7 @@ class DecidoController extends BaseController{
 		return View::make('testing')->with('products',$products);
 	} 
 	public function query(){
-		$query = Input::get('query');
+		$query = Toolbox::cleanQuery(Input::get('query'));
 		$fd = (Input::get('fd')!= '') ? Input::get('fd') : NULL;
 		$gclid = (Input::get('gclid')) ? Input::get('gclid') : false;
 
