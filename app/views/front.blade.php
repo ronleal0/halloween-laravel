@@ -70,7 +70,7 @@
               <div id="panel1" class="accordionContent active content">
                  <ul>
                    <li ng-cloak ng-repeat="cats in categories">
-                    <a href="/become/static?cat=@{{cats.parameter}}">@{{ cats.name }}</a>
+                    <a href="/halloween/static?cat=@{{cats.parameter}}">@{{ cats.name }}</a>
                    </li>
                </ul>
               </div>
