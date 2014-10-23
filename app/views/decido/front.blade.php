@@ -35,7 +35,7 @@
                   </div>
                   <div class="large-7 large-centered columns">
                     <div class="large-6 columns">
-                      <input type="radio" name="siteSearch" value="halloween/q?query=" id="forthis"><label for="forthis">Halloween Suche</label>
+                      <input type="radio" name="siteSearch" value="/halloween/q?query=" id="forthis"><label for="forthis">Halloween Suche</label>
                     </div>
                     <div class="large-6 columns">
                       <input type="radio" name="siteSearch" value="http://www.decido.de/suche?qry=" id="forthat"><label for="forthat">Preisvergleich Suche</label>
@@ -208,8 +208,8 @@
           </ul>
         </div>
     @endif
-    <div class="row stickyfooter">
-      <p>
+    <div class="stickyfooter">
+      <p style="line-height:10px">
         *Alle Preise verstehen sich inklusive der gesetzlichen Mehrwertsteuer und ggf. zuzüglich Versandkosten. Die Angebotsinformationen basieren auf den Angaben des jeweiligen Händlers und werden über automatisierte Prozesse aktualisiert. Wir sind um eine handelsüblich angemessene Richtigkeit der Produkt- und Preisangaben bemüht, es kann jedoch möglich sein, dass sich einzelne Preise und/oder Versandkosten in den jeweiligen Shops erhöht haben. Ausschlaggebend ist der beim jeweiligen Webshop angegebene Preis. Leider ist eine Echtzeit-Aktualisierung der Preise technisch nicht möglich.
       </p>
       <p>
