@@ -200,7 +200,7 @@
 
              ?>
              @if($isQueryPage)
-            <li><a {{($curr == $num) ? 'class="active"' : ''}} href="http://www.decido.de/halloween/?query={{$query}}&page={{$num}}">Page {{$num}}</a></li>
+            <li><a {{($curr == $num) ? 'class="active"' : ''}} href="http://www.decido.de/halloween/?page={{$num}}&query={{$query}}">Page {{$num}}</a></li>
             @else
             <li><a {{($curr == $num) ? 'class="active"' : ''}} href="http://www.decido.de/halloween/?page={{$num}}">Page {{$num}}</a></li>
             @endif

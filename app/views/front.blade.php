@@ -177,7 +177,7 @@
 
              ?>
               @if($isQueryPage)
-                <li><a {{($curr == $num) ? 'class="active"' : ''}} href="http://www.become.com/halloween/q?query={{$query}}&page={{$num}}"></a></li>
+                <li><a {{($curr == $num) ? 'class="active"' : ''}} href="http://www.become.com/halloween/q?page={{$num}}&query={{$query}}"></a></li>
               @else
                 <li><a {{($curr == $num) ? 'class="active"' : ''}} href="http://www.become.com/halloween?page={{$num}}"></a></li>
               @endif
